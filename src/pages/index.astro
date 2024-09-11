@@ -1,7 +1,9 @@
 ---
-import Footer from '@/components/Footer.astro'
-import Navbar from '@/components/Navbar.tsx'
+import About from '@/components/About.tsx'
 import AboutMe from '@/components/AboutMe.tsx'
+import Footer from '@/components/Footer.tsx'
+import Navbar from '@/components/Navbar.tsx'
+import Proyects from '@/components/Proyects.tsx'
 import WorkExperience from '@/components/WorkExperience.tsx'
 import '@/styles/globals.css'
 import Layout from '../layouts/Layout.astro'
@@ -32,16 +34,21 @@ import { ModeToggle } from '@/components/ModeToggle'
 	}
 </script>
 
-<Layout title='Welcome to Astro.'>
-	<div class='flex justify-between items-center px-8 pt-4 h-8'>
-		<Navbar client:only='react' />
-		<ModeToggle client:only='react' />
-	</div>
+<Layout
+	title='Portfolio de Amyssyko - Desarrollador de Software y Diseñador Web'>
+	<header class='flex justify-between items-center px-8 pt-4 h-10'>
+		<Navbar client:visible />
+		<ModeToggle client:visible />
+	</header>
 
-	<main class='px-8 md:px-40 lg:px-64 2xl:px-96'>
-		<AboutMe client:only='react' />
-		<WorkExperience client:only='react' />
-		<h1>Welcome to <span class='text-gradient'>Astro</span></h1>
+	<main class='px-8 md:px-40 lg:px-64 2xl:px-[480px]'>
+		<About client:visible />
+		<br />
+		<WorkExperience client:visible />
+		<br />
+		<Proyects client:visible />
+		<br />
+		<AboutMe client:visible />
 	</main>
-	<Footer />
+	<Footer client:load />
 </Layout>

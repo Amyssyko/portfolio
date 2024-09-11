@@ -23,7 +23,11 @@ const Navbar = () => {
 						key={item.id}
 						href={item.value}
 						aria-label={item.title}>
-						<ToggleGroupItem value={item.value}>{item.title}</ToggleGroupItem>
+						<ToggleGroupItem
+							className='text-xs font-semibold hover:text-primary md:text-lg'
+							value={item.value}>
+							{item.title}
+						</ToggleGroupItem>
 					</a>
 				))}
 			</ToggleGroup>
