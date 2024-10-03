@@ -23,8 +23,8 @@ const AboutMe = () => {
 				Acerca de mí
 			</h2>
 			<article className='grid place-content-center items-center justify-items-center gap-4 md:mx-1 md:grid-cols-2 md:gap-32'>
-				<div className='order-last space-y-4 md:order-first'>
-					<p className='[&>strong]:text-orange-600'>
+				<div className='order-last space-y-4 md:order-first [&>p]:text-pretty'>
+					<p className='[&>strong]:text-slate-600'>
 						<strong>
 							Ingeniero en Sistemas de Información,desarrollador Full Stack con
 							experiencia en el diseño y desarrollo de aplicaciones web y
@@ -39,8 +39,19 @@ const AboutMe = () => {
 					</p>
 					<p className='[&>strong]:text-lime-600'>
 						<strong>Conocimientos:</strong> HTML, CSS, JavaScript, TypeScript,
-						React, Node.js, Express, MongoDB, MySQL, Git, GitHub, Firebase,
-						Figma, Adobe XD, entre otros.
+						React, Nextjs, Node.js, Express, Astro, Angular, PostgreSQL, MySQL,
+						Supabase, entre otros.
+					</p>
+					<p className='[&>strong]:text-lime-600'>
+						<strong>Herramientas:</strong> Visual Studio Code, Android Studio,
+						Git, Bash, Postman, Slack, Discord, Zoom, Google Meet.
+					</p>
+					<p className='[&>strong]:text-lime-600'>
+						<strong>Idiomas:</strong> Español (nativo), Inglés (intermedio).
+					</p>
+					<p className='[&>strong]:text-lime-600'>
+						<strong>Intereses:</strong> Desarrollo de software, diseño web,
+						tecnologías web y movil, música, cine y gatos 🐈.
 					</p>
 				</div>
 				<div className='aspect-square h-32 shadow-2xl shadow-cyan-500/50'>

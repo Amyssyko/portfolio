@@ -6,9 +6,9 @@ const About = () => {
 		<section
 			id='about'
 			data-section='about-me'
-			className='flex max-w-xl flex-col gap-4'>
-			<div className='flex w-full flex-row items-center justify-start gap-4'>
-				<Avatar className='size-16'>
+			className='grid gap-4 md:grid-cols-2'>
+			<div className='order-last flex flex-col items-center justify-center space-y-4'>
+				<Avatar className='size-40'>
 					<AvatarImage
 						src='https://avatars.githubusercontent.com/u/69484342'
 						alt='Amyssyko'
@@ -41,7 +41,7 @@ const About = () => {
 					competencias técnicas.
 				</p>
 
-				<div className='flex gap-4'>
+				<div className='flex gap-4 pt-8'>
 					<Button className='flex border-spacing-2 items-center justify-between gap-1 rounded-full border border-primary transition-colors ease-in-out hover:scale-105 dark:text-secondary-foreground'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
@@ -61,7 +61,7 @@ const About = () => {
 							referrerPolicy='no-referrer'
 							rel='noopener'
 							target='_blank'
-							href='mailto:miduga@gmail.com'>
+							href='mailto:cristian-0005@live.com'>
 							Contáctame
 						</a>
 					</Button>

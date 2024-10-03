@@ -5,7 +5,8 @@ const WorkExperience = () => {
 			role: 'Desarrollador Full Stack',
 			company: 'Freelancer',
 			date: '2022 - Actualidad',
-			description: 'Diseño y desarrollo de aplicaciones web y móviles.',
+			description:
+				'Diseño y desarrollo de aplicaciones web y móviles, utilizando tecnologías como Node.js, React, Flutter, Next.js, AstroJS, DJango, entre otras.',
 			more: 'Mas información',
 			url: 'https://github.com/Amyssyko'
 		}
@@ -66,7 +67,7 @@ const WorkExperience = () => {
 											target='_blank'
 											href={url}
 											role='link'
-											className='inline-flex items-center text-lg font-medium text-yellow-600 hover:text-yellow-700 dark:text-yellow-200 dark:hover:text-yellow-300'>
+											className='flex items-center justify-start text-lg font-medium text-yellow-600 hover:text-yellow-700 dark:text-yellow-200 dark:hover:text-yellow-300'>
 											{more}
 											<svg
 												xmlns='http://www.w3.org/2000/svg'

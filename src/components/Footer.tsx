@@ -34,9 +34,7 @@ const Footer = () => {
 		<footer className='grid place-content-center place-items-center border-t-2'>
 			<p>© {new Date().getFullYear()} Amyssyko </p>
 			<div>
-				<h6>
-					Fecha actual: <span>{time}</span>
-				</h6>
+				<h6>{time}</h6>
 			</div>
 		</footer>
 	)

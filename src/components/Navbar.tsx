@@ -1,4 +1,4 @@
-import { ToggleGroup, ToggleGroupItem } from './ui/toggle-group'
+import { Button } from './ui/button'
 
 const data = [
 	{ id: 1, title: 'Sobre mí', value: '#about-me' },
@@ -10,27 +10,32 @@ const data = [
 const Navbar = () => {
 	return (
 		<nav className='grid w-full justify-items-center'>
-			<ToggleGroup
-				className='space-x-4'
+			<ul
+				className='flex space-x-4'
 				about='Navegación'
-				aria-label='Navegación'
-				type='single'>
+				aria-label='Navegación'>
 				{data.map((item) => (
-					<a
-						referrerPolicy='no-referrer'
-						rel='noopener'
-						target='_self'
-						key={item.id}
-						href={item.value}
-						aria-label={item.title}>
-						<ToggleGroupItem
+					<li key={item.id}>
+						<a
 							className='text-xs font-semibold hover:text-primary md:text-lg'
-							value={item.value}>
-							{item.title}
-						</ToggleGroupItem>
-					</a>
+							referrerPolicy='no-referrer'
+							rel='noopener'
+							target='_self'
+							href={
+								item.value === '#contact' ?
+									'mailto:miduga@gmail.com'
+								:	item.value
+							}
+							aria-label={item.title}>
+							<Button
+								variant='link'
+								value={item.value}>
+								{item.title}
+							</Button>
+						</a>
+					</li>
 				))}
-			</ToggleGroup>
+			</ul>
 		</nav>
 	)
 }
