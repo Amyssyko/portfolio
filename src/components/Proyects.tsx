@@ -1,5 +1,5 @@
 import type { Project } from '@/env'
-import ItemProyect from './Item-Proyect'
+import ItemProyect from './item-proyect'
 import SectionContainer from './section-container'
 import {
 	BrowserIcon,
