@@ -1,6 +1,8 @@
+import SectionContainer from './section-container'
+
 const AboutMe = () => {
 	return (
-		<section
+		<SectionContainer
 			id='about-me'
 			data-section='about-me'
 			className='flex flex-col gap-4'>
@@ -24,7 +26,7 @@ const AboutMe = () => {
 			</h2>
 			<article className='grid place-content-center items-center justify-items-center gap-4 md:mx-1 md:grid-cols-2 md:gap-32'>
 				<div className='order-last space-y-4 md:order-first [&>p]:text-pretty'>
-					<p className='[&>strong]:text-slate-600'>
+					<p className='[&>strong]:text-sky-700'>
 						<strong>
 							Ingeniero en Sistemas de Información,desarrollador Full Stack con
 							experiencia en el diseño y desarrollo de aplicaciones web y
@@ -47,22 +49,22 @@ const AboutMe = () => {
 						Git, Bash, Postman, Slack, Discord, Zoom, Google Meet.
 					</p>
 					<p className='[&>strong]:text-lime-600'>
-						<strong>Idiomas:</strong> Español (nativo), Inglés (intermedio).
+						<strong>Idiomas:</strong> Español (nativo), Inglés (B1).
 					</p>
 					<p className='[&>strong]:text-lime-600'>
 						<strong>Intereses:</strong> Desarrollo de software, diseño web,
 						tecnologías web y movil, música, cine y gatos 🐈.
 					</p>
 				</div>
-				<div className='aspect-square h-32 shadow-2xl shadow-cyan-500/50'>
+				<div className='aspect-square h-64 shadow-2xl shadow-cyan-500/50'>
 					<img
-						className='h-32 w-full skew-x-12 rounded-xl border-4 border-neutral-950 object-cover object-top transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105'
+						className='h-64 w-full skew-x-12 rounded-xl border-4 border-neutral-950 object-cover object-top transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105'
 						src='https://avatars.githubusercontent.com/u/69484342'
 						alt='name'
 					/>
 				</div>
 			</article>
-		</section>
+		</SectionContainer>
 	)
 }
 

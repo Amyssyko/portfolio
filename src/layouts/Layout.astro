@@ -17,6 +17,7 @@ const { title } = Astro.props
 		/>
 		<link
 			rel='canonical'
+			arial-label='Canonical URL'
 			href='https://github/Amyssyko'
 		/>
 		<meta
@@ -71,7 +72,7 @@ const { title } = Astro.props
 			name='twitter:domain'
 			content='https://x.com'
 		/>
-		<script type='application/ld+json'>
+		<script is:inline type='application/ld+json'>
 			{
 				"@context": "https://schema.org",
 				"@type": "NewsArticle",
@@ -115,6 +116,10 @@ const { title } = Astro.props
 		/>
 	</head>
 	<body class='grid h-dvh grid-rows-[auto_1fr_auto] gap-y-20'>
+		<div
+			class='absolute top-0 bottom-0 z-[-2] h-dvh w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
+      dark:bg-[radial-gradient(ellipse_40%_80%_at_60%_-10%,rgba(120,119,198,0.3),rgba(255,255,255,0))]'>
+		</div>
 		<slot />
 	</body>
 </html>

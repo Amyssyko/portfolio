@@ -1,11 +1,12 @@
+import SectionContainer from './section-container'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
 import { Button } from './ui/button'
 
 const About = () => {
 	return (
-		<section
+		<SectionContainer
 			id='about'
-			data-section='about-me'
+			data-section='about'
 			className='grid gap-4 md:grid-cols-2'>
 			<div className='order-last flex flex-col items-center justify-center space-y-4'>
 				<Avatar className='size-40'>
@@ -16,6 +17,7 @@ const About = () => {
 					<AvatarFallback>David</AvatarFallback>
 				</Avatar>
 				<Button
+					type='button'
 					className='flex border-spacing-2 items-center gap-1 rounded-full border border-primary transition-colors ease-in-out hover:scale-105'
 					asChild>
 					<a
@@ -32,7 +34,7 @@ const About = () => {
 				<p className='mt-6 text-justify text-xl sm:text-start [&>strong]:font-semibold [&>strong]:text-yellow-600 dark:[&>strong]:text-yellow-200'>
 					+2 años de experiencia. &nbsp;
 					<strong>
-						Ingeniero en Sistemas de Información,desarrollador Full Stack con
+						Ingeniero en Sistemas de Información, desarrollador Full Stack con
 						experiencia en el diseño y desarrollo de aplicaciones web y móviles.
 					</strong>
 					&nbsp; Entusiasta de la innovación tecnológica y la ingeniería de
@@ -42,7 +44,9 @@ const About = () => {
 				</p>
 
 				<div className='flex gap-4 pt-8'>
-					<Button className='flex border-spacing-2 items-center justify-between gap-1 rounded-full border border-primary transition-colors ease-in-out hover:scale-105 dark:text-secondary-foreground'>
+					<Button
+						type='button'
+						className='flex border-spacing-2 items-center justify-between gap-1 rounded-full border border-primary transition-colors ease-in-out hover:scale-105 dark:text-secondary-foreground'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width='24'
@@ -65,7 +69,9 @@ const About = () => {
 							Contáctame
 						</a>
 					</Button>
-					<Button className='flex border-spacing-2 items-center justify-between gap-1 rounded-full border border-primary transition-colors ease-in-out hover:scale-105 dark:text-secondary-foreground'>
+					<Button
+						type='button'
+						className='flex border-spacing-2 items-center justify-between gap-1 rounded-full border border-primary transition-colors ease-in-out hover:scale-105 dark:text-secondary-foreground'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width='24'
@@ -100,7 +106,7 @@ const About = () => {
 					</Button>
 				</div>
 			</div>
-		</section>
+		</SectionContainer>
 	)
 }
 

@@ -1,0 +1,6 @@
+export { BrowserIcon } from './browser-icon'
+export { GithubIcon } from './github-icon'
+export { NextjsIcon } from './next-icon'
+export { ReactIcon } from './react-icon'
+export { TailwindCSSIcon } from './tailwind-icon'
+export { ViteIcon } from './vite-icon'

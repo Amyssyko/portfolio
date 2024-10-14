@@ -1,27 +1,35 @@
+import type { Project } from '@/env'
+import ItemProyect from './Item-Proyect'
+import SectionContainer from './section-container'
 import {
-	iconBrowser,
-	iconGithub,
-	iconNext,
-	iconReact,
-	iconTailwindCSS,
-	iconVite
-} from './icons'
-import ItemProyect from './Item-proyect'
+	BrowserIcon,
+	GithubIcon,
+	NextjsIcon,
+	ReactIcon,
+	TailwindCSSIcon,
+	ViteIcon
+} from './ui/icon'
 const urlGithub = 'https://github.com/Amyssyko'
 
-const data = [
+const data: Project[] = [
 	{
 		id: 1,
 		image: '/639shots_so',
 		title: 'Buscador de Multimedia',
 		tegnology: [
-			{ id: 1, name: 'Vite', icon: iconVite },
-			{ id: 2, name: 'TailwindCSS', icon: iconTailwindCSS },
-			{ id: 3, name: 'React', icon: iconReact }
+			{
+				id: 1,
+				name: 'Vite',
+				icon: <ViteIcon />
+			},
+			{ id: 2, name: 'TailwindCSS', icon: <TailwindCSSIcon /> },
+			{ id: 3, name: 'React', icon: <ReactIcon /> }
 		],
 		description: 'Busca imágenes, videos en la API de Pixabay.',
-		repository: [{ url: `${urlGithub}/galeria-pixabay`, icon: iconGithub }],
-		website: [{ url: 'https://galeria-pixabay.vercel.app/', icon: iconBrowser }]
+		repository: [{ url: `${urlGithub}/galeria-pixabay`, icon: <GithubIcon /> }],
+		website: [
+			{ url: 'https://galeria-pixabay.vercel.app/', icon: <BrowserIcon /> }
+		]
 	},
 	{
 		id: 2,
@@ -31,17 +39,17 @@ const data = [
 			{
 				id: 0,
 				name: 'NextJS',
-				icon: iconNext
+				icon: <NextjsIcon />
 			},
 			{
 				id: 1,
 				name: 'React',
-				icon: iconReact
+				icon: <ReactIcon />
 			},
 			{
 				id: 2,
 				name: 'TailwindCSS',
-				icon: iconTailwindCSS
+				icon: <TailwindCSSIcon />
 			}
 		],
 		description: 'Aplicación de restaurantes con NextJS.',
@@ -49,13 +57,13 @@ const data = [
 			{
 				url: `${urlGithub}/nextjs-restaurant-app`,
 
-				icon: iconGithub
+				icon: <GithubIcon />
 			}
 		],
 		website: [
 			{
 				url: 'https://nextjs-restaurant-app-nine.vercel.app/',
-				icon: iconBrowser
+				icon: <BrowserIcon />
 			}
 		]
 	},
@@ -64,23 +72,24 @@ const data = [
 		image: '/537shots_so',
 		title: 'Juego de Mantenimiento de PC',
 		tegnology: [
-			{ id: 1, name: 'Vite', icon: iconVite },
-			{ id: 2, name: 'TailwindCSS', icon: iconTailwindCSS },
-			{ id: 3, name: 'React', icon: iconReact }
+			{ id: 1, name: 'Vite', icon: <ViteIcon /> },
+			{ id: 2, name: 'TailwindCSS', icon: <TailwindCSSIcon /> },
+			{ id: 3, name: 'React', icon: <ReactIcon /> }
 		],
 		description: 'Responde a preguntas de mantenimiento equipos de cómputo.',
-		repository: [{ url: `${urlGithub}/mantenimiento-game`, icon: iconGithub }],
+		repository: [
+			{ url: `${urlGithub}/mantenimiento-game`, icon: <GithubIcon /> }
+		],
 		website: [
-			{ url: 'https://mantenimiento-game.vercel.app/', icon: iconBrowser }
+			{ url: 'https://mantenimiento-game.vercel.app/', icon: <BrowserIcon /> }
 		]
 	}
 ]
 const Proyects = () => {
 	return (
-		<section
+		<SectionContainer
 			id='projects'
-			data-section='proyects'
-			className='flex flex-col gap-4'>
+			data-section='proyects'>
 			<h2 className='relative mb-6 flex items-center gap-x-3 text-3xl font-semibold text-orange-600'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
@@ -102,10 +111,15 @@ const Proyects = () => {
 
 			<ol className='grid gap-8 md:mx-6'>
 				{data.map((item) => {
-					return <ItemProyect {...item} />
+					return (
+						<ItemProyect
+							key={item.id}
+							{...item}
+						/>
+					)
 				})}
 			</ol>
-		</section>
+		</SectionContainer>
 	)
 }
 

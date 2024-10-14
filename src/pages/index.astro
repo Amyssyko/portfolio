@@ -4,10 +4,10 @@ import AboutMe from '@/components/AboutMe.tsx'
 import Footer from '@/components/Footer.tsx'
 import Navbar from '@/components/Navbar.tsx'
 import Proyects from '@/components/Proyects.tsx'
-import WorkExperience from '@/components/WorkExperience.tsx'
 import '@/styles/globals.css'
 import Layout from '../layouts/Layout.astro'
 import { ModeToggle } from '@/components/ModeToggle'
+import WorkExperience from '@/components/WorkExperience.tsx'
 ---
 
 <script is:inline>
@@ -49,5 +49,5 @@ import { ModeToggle } from '@/components/ModeToggle'
 		<br />
 		<AboutMe client:visible />
 	</main>
-	<Footer client:load />
+	<Footer client:only='react' />
 </Layout>

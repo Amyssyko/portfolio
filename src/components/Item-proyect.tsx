@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import type { Project } from '@/env'
+import { useState, type FC } from 'react'
 import { Toggle } from './ui/toggle'
 
-const ItemProyect = ({
+const ItemProyect: FC<Project> = ({
 	id,
 	title,
 	image,
@@ -9,14 +10,6 @@ const ItemProyect = ({
 	description,
 	repository,
 	website
-}: {
-	id: number
-	title: string
-	image: string
-	tegnology: { id: number; name: string; icon: JSX.Element }[]
-	description: string
-	repository: { url: string; icon: JSX.Element }[]
-	website: { url: string; icon: JSX.Element }[]
 }) => {
 	const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 	const [isHovered, setIsHovered] = useState(false)
@@ -38,9 +31,11 @@ const ItemProyect = ({
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}>
 				<img
-					className={`aspect-video rounded-sm object-contain duration-200 ${
+					className={`aspect-video h-full rounded-sm object-contain duration-200 md:h-[350px] ${
 						isHovered ? 'scale-150 contrast-125' : 'scale-100'
 					}`}
+					width={500}
+					height={500}
 					src={`${image}.webp`}
 					alt={title}
 					onBlur={() => setIsHovered(false)}
@@ -64,7 +59,7 @@ const ItemProyect = ({
 								variant='outline'
 								className='space-x-2 px-2 py-4'>
 								<span>{icon}</span>
-								<h5>{name}</h5>
+								<span>{name}</span>
 							</Toggle>
 						</li>
 					))}
