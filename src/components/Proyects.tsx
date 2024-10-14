@@ -1,5 +1,5 @@
 import type { Project } from '@/env'
-import ItemProyect from './item-proyect'
+import { ProyectItem } from './proyect-item'
 import SectionContainer from './section-container'
 import {
 	BrowserIcon,
@@ -112,7 +112,7 @@ const Proyects = () => {
 			<ol className='grid gap-8 md:mx-6'>
 				{data.map((item) => {
 					return (
-						<ItemProyect
+						<ProyectItem
 							key={item.id}
 							{...item}
 						/>
