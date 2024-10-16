@@ -1,6 +1,6 @@
 import type { Project } from '@/env'
-import { ProyectItem } from './proyect-item'
-import SectionContainer from './section-container'
+import ProyectItem from '@components/proyect-item'
+import SectionContainer from '@components/section-container'
 import {
 	BrowserIcon,
 	GithubIcon,
@@ -8,7 +8,7 @@ import {
 	ReactIcon,
 	TailwindCSSIcon,
 	ViteIcon
-} from './ui/icon'
+} from '@ui/icon'
 const urlGithub = 'https://github.com/Amyssyko'
 
 const data: Project[] = [

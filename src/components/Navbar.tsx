@@ -1,4 +1,4 @@
-import { Button } from './ui/button'
+import { Button } from '@ui/button'
 
 const data = [
 	{ id: 1, title: 'Sobre mí', value: '#about-me' },

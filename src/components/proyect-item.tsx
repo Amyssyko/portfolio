@@ -1,8 +1,8 @@
 import type { Project } from '@/env'
+import { Toggle } from '@ui/toggle'
 import { useState, type FC } from 'react'
-import { Toggle } from './ui/toggle'
 
-export const ProyectItem: FC<Project> = ({
+const ProyectItem: FC<Project> = ({
 	id,
 	title,
 	image,
@@ -108,3 +108,5 @@ export const ProyectItem: FC<Project> = ({
 		</li>
 	)
 }
+
+export default ProyectItem

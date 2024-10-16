@@ -1,5 +1,5 @@
 import type { Experience } from '@/env'
-import SectionContainer from './section-container'
+import SectionContainer from '@components/section-container'
 
 const data: Experience[] = [
 	{

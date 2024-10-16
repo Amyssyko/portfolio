@@ -1,4 +1,4 @@
-import SectionContainer from './section-container'
+import SectionContainer from '@components/section-container'
 
 const AboutMe = () => {
 	return (
@@ -25,8 +25,8 @@ const AboutMe = () => {
 				Acerca de mí
 			</h2>
 			<article className='grid place-content-center items-center justify-items-center gap-4 md:mx-1 md:grid-cols-2 md:gap-32'>
-				<div className='order-last space-y-4 md:order-first [&>p]:text-pretty'>
-					<p className='[&>strong]:text-sky-700'>
+				<div className='order-last space-y-4 md:order-first [&>p>strong]:text-lime-600 [&>p]:text-pretty'>
+					<p>
 						<strong>
 							Ingeniero en Sistemas de Información,desarrollador Full Stack con
 							experiencia en el diseño y desarrollo de aplicaciones web y
@@ -39,26 +39,26 @@ const AboutMe = () => {
 						que impulsen mi crecimiento profesional para optimizar mis
 						competencias técnicas.
 					</p>
-					<p className='[&>strong]:text-lime-600'>
+					<p>
 						<strong>Conocimientos:</strong> HTML, CSS, JavaScript, TypeScript,
 						React, Nextjs, Node.js, Express, Astro, Angular, PostgreSQL, MySQL,
 						Supabase, entre otros.
 					</p>
-					<p className='[&>strong]:text-lime-600'>
+					<p>
 						<strong>Herramientas:</strong> Visual Studio Code, Android Studio,
 						Git, Bash, Postman, Slack, Discord, Zoom, Google Meet.
 					</p>
-					<p className='[&>strong]:text-lime-600'>
+					<p>
 						<strong>Idiomas:</strong> Español (nativo), Inglés (B1).
 					</p>
-					<p className='[&>strong]:text-lime-600'>
+					<p>
 						<strong>Intereses:</strong> Desarrollo de software, diseño web,
-						tecnologías web y movil, música, cine y gatos 🐈.
+						tecnologías web y movil, música, cine y 🐈.
 					</p>
 				</div>
 				<div className='aspect-square h-64 shadow-2xl shadow-cyan-500/50'>
 					<img
-						className='h-64 w-full skew-x-12 rounded-xl border-4 border-neutral-950 object-cover object-top transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105'
+						className='h-64 w-full skew-x-6 rounded-xl border-4 border-neutral-950 object-cover object-top transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105'
 						src='https://avatars.githubusercontent.com/u/69484342'
 						alt='name'
 					/>

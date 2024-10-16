@@ -1,6 +1,6 @@
-import SectionContainer from './section-container'
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
-import { Button } from './ui/button'
+import SectionContainer from '@components/section-container'
+import { Avatar, AvatarFallback, AvatarImage } from '@ui/avatar'
+import { Button } from '@ui/button'
 
 const About = () => {
 	return (

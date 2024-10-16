@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 const formatedDate = new Intl.DateTimeFormat('es-ES', {
 	weekday: 'short',
 	year: 'numeric',
-	month: 'long',
+	month: 'short',
 	day: 'numeric',
 	hour: 'numeric',
 	minute: 'numeric',
@@ -21,9 +21,9 @@ const Footer = () => {
 	}, [])
 
 	return (
-		<footer className='grid place-content-center place-items-center'>
-			<p>© {new Date().getFullYear()} Amyssyko </p>
-			<span>{time}</span>
+		<footer className='grid place-content-center place-items-center py-1'>
+			<p className=''>© {new Date().getFullYear()} Amyssyko </p>
+			<span className='text-xs'>{time}</span>
 		</footer>
 	)
 }

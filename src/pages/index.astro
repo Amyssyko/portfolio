@@ -1,13 +1,13 @@
 ---
-import About from '@/components/About.tsx'
-import AboutMe from '@/components/AboutMe.tsx'
-import Footer from '@/components/Footer.tsx'
-import Navbar from '@/components/Navbar.tsx'
-import Proyects from '@/components/Proyects.tsx'
-import '@/styles/globals.css'
+import '@styles/globals.css'
 import Layout from '../layouts/Layout.astro'
-import { ModeToggle } from '@/components/ModeToggle'
-import WorkExperience from '@/components/WorkExperience.tsx'
+import Navbar from '@components/Navbar'
+import { ModeToggle } from '@components/ModeToggle'
+import About from '@components/About'
+import WorkExperience from '@components/WorkExperience'
+import Proyects from '@components/Proyects'
+import AboutMe from '@components/AboutMe'
+import Footer from '@components/Footer'
 ---
 
 <script is:inline>
@@ -35,7 +35,7 @@ import WorkExperience from '@/components/WorkExperience.tsx'
 </script>
 
 <Layout title='Portfolio de Amyssyko'>
-	<header class='flex justify-between items-center px-8 pt-4 h-10'>
+	<header class='flex justify-between items-center px-8 pt-4 h-10 gap-x-4'>
 		<Navbar client:visible />
 		<ModeToggle client:visible />
 	</header>
