@@ -33,7 +33,7 @@ const data: Project[] = [
 	},
 	{
 		id: 2,
-		image: '732shots_so',
+		image: '/732shots_so',
 		title: 'Restaurantes App',
 		tegnology: [
 			{
