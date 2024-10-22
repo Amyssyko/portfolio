@@ -16,9 +16,7 @@ const Navbar = () => {
 					about='Navegación'
 					aria-label='Navegación'>
 					{data.map((item) => (
-						<li
-							id='navItems'
-							key={item.id}>
+						<li key={item.id}>
 							<a
 								className='text-xs font-semibold hover:text-primary md:text-lg'
 								referrerPolicy='no-referrer'
