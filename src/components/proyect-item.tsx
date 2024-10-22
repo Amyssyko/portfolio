@@ -36,7 +36,7 @@ const ProyectItem: FC<Project> = ({
 					}`}
 					width={500}
 					height={500}
-					src={`${image}.webp`}
+					src={`/public/${image}.webp`}
 					alt={title}
 					onBlur={() => setIsHovered(false)}
 					aria-label={`Imagen de ${title}`}
