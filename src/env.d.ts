@@ -3,7 +3,7 @@
 export type Project = {
 	id: number
 	title: string
-	image: string
+	image: ImageMetadata
 	tegnology: Technology[]
 	description: string
 	repository: Repository[]
