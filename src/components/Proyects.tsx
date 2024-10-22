@@ -11,10 +11,14 @@ import {
 } from '@ui/icon'
 const urlGithub = 'https://github.com/Amyssyko'
 
+import mantenimientoImage from 'public/images/537shots_so.webp'
+import searchMediaIamge from 'public/images/639shots_so.webp'
+import restaurantImage from 'public/images/732shots_so.webp'
+
 const data: Project[] = [
 	{
 		id: 1,
-		image: '/639shots_so',
+		image: searchMediaIamge,
 		title: 'Buscador de Multimedia',
 		tegnology: [
 			{
@@ -33,7 +37,7 @@ const data: Project[] = [
 	},
 	{
 		id: 2,
-		image: '/732shots_so',
+		image: restaurantImage,
 		title: 'Restaurantes App',
 		tegnology: [
 			{
@@ -69,7 +73,7 @@ const data: Project[] = [
 	},
 	{
 		id: 3,
-		image: '/537shots_so',
+		image: mantenimientoImage,
 		title: 'Juego de Mantenimiento de PC',
 		tegnology: [
 			{ id: 1, name: 'Vite', icon: <ViteIcon /> },
