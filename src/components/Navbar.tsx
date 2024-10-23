@@ -1,5 +1,3 @@
-import { Button } from '@ui/button'
-
 const data = [
 	{ id: 1, title: 'Sobre mí', value: '#about-me' },
 	{ id: 2, title: 'Experiencia laboral', value: '#experience' },
@@ -18,7 +16,7 @@ const Navbar = () => {
 					{data.map((item) => (
 						<li key={item.id}>
 							<a
-								className='text-xs font-semibold hover:text-primary md:text-lg'
+								className='relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap text-lg font-semibold text-primary transition-all ease-in-out before:absolute before:bottom-0 before:left-[50%] before:h-[1px] before:w-0 before:origin-center before:bg-gray-100 before:transition-[width] before:duration-700 before:ease-in-out after:absolute after:bottom-0 after:right-[50%] after:h-[1px] after:w-0 after:origin-center after:bg-gray-100 after:transition-[width] after:duration-700 after:ease-in-out hover:text-secondary-foreground hover:before:w-[50%] hover:after:w-[50%] md:text-xl'
 								referrerPolicy='no-referrer'
 								rel='noopener'
 								target='_self'
@@ -28,12 +26,7 @@ const Navbar = () => {
 									:	item.value
 								}
 								aria-label={item.title}>
-								<Button
-									type='button'
-									variant='link'
-									value={item.value}>
-									{item.title}
-								</Button>
+								{item.title}
 							</a>
 						</li>
 					))}
