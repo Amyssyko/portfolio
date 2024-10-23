@@ -29,7 +29,7 @@ const data: Project[] = [
 			{ id: 2, name: 'TailwindCSS', icon: <TailwindCSSIcon /> },
 			{ id: 3, name: 'React', icon: <ReactIcon /> }
 		],
-		description: 'Busca imágenes, videos en la API de Pixabay.',
+		description: 'Busca imágenes, videos  y descarga archivos de Pixabay.',
 		repository: [{ url: `${urlGithub}/galeria-pixabay`, icon: <GithubIcon /> }],
 		website: [
 			{ url: 'https://galeria-pixabay.vercel.app/', icon: <BrowserIcon /> }
@@ -56,7 +56,8 @@ const data: Project[] = [
 				icon: <TailwindCSSIcon />
 			}
 		],
-		description: 'Aplicación de restaurantes con NextJS.',
+		description:
+			'Aplicación de restaurantes con NextJS con Google Sheets como base de datos.',
 		repository: [
 			{
 				url: `${urlGithub}/nextjs-restaurant-app`,

@@ -31,7 +31,7 @@ const ProyectItem: FC<Project> = ({
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}>
 				<img
-					className={`aspect-video h-full rounded-sm object-contain duration-200 md:h-[350px] ${
+					className={`h-full rounded-3xl border-zinc-800 object-contain duration-200 md:h-[350px] ${
 						isHovered ? 'scale-150 contrast-125' : 'scale-100'
 					}`}
 					width={500}
@@ -46,7 +46,7 @@ const ProyectItem: FC<Project> = ({
 				/>
 			</div>
 			<div className='grid place-content-center items-center justify-items-center space-y-2'>
-				<h3 className='text-balance text-center text-2xl md:text-start md:text-3xl'>
+				<h3 className='text-balance text-center text-2xl font-medium md:text-start md:text-3xl'>
 					{title}
 				</h3>
 				<ul className='flex flex-row gap-2'>
@@ -77,7 +77,13 @@ const ProyectItem: FC<Project> = ({
 									variant='outline'
 									className='space-x-2 px-2 py-4'>
 									<span>{icon}</span>
-									<span>Repositorio</span>
+									<a
+										referrerPolicy='no-referrer'
+										rel='noopener'
+										target='_blank'
+										href={url}>
+										Repositorio
+									</a>
 								</Toggle>
 							</li>
 						))}
