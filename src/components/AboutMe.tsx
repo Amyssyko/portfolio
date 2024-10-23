@@ -53,7 +53,7 @@ const AboutMe = () => {
 					</p>
 					<p>
 						<strong>Intereses:</strong> Desarrollo de software, diseño web,
-						tecnologías web y movil, música, cine y 🐈.
+						tecnologías web y movil, música, cine y 🐈‍⬛.
 					</p>
 				</div>
 				<div className='aspect-square h-64 shadow-2xl shadow-cyan-500/50'>
