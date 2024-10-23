@@ -53,7 +53,7 @@ const ProyectItem: FC<Project> = ({
 					{tegnology.map(({ id, name, icon }) => (
 						<li
 							key={id}
-							className='[&>button]:bg-sky-800 [&>button]:text-secondary dark:[&>button]:bg-primary-foreground dark:[&>button]:text-secondary-foreground dark:hover:[&>button]:bg-sky-500'>
+							className='[&>button]:bg-accent-foreground [&>button]:text-secondary dark:[&>button]:bg-primary-foreground dark:[&>button]:text-secondary-foreground dark:hover:[&>button]:bg-white hover:dark:[&>button]:text-secondary'>
 							<Toggle
 								size='sm'
 								variant='outline'
@@ -69,28 +69,28 @@ const ProyectItem: FC<Project> = ({
 				<div className='grid grid-cols-2 place-content-center justify-items-center gap-2'>
 					<ul>
 						{repository.map(({ url, icon }, index) => (
-							<li key={index}>
+							<li
+								key={index}
+								className='[&>button]:bg-accent-foreground [&>button]:text-secondary dark:[&>button]:bg-primary-foreground dark:[&>button]:text-secondary-foreground dark:hover:[&>button]:bg-white hover:dark:[&>button]:text-secondary'>
 								<Toggle
+									size='sm'
 									variant='outline'
-									className='space-x-2 px-2 py-4 hover:bg-secondary-foreground hover:text-secondary'>
+									className='space-x-2 px-2 py-4'>
 									<span>{icon}</span>
-									<a
-										referrerPolicy='no-referrer'
-										rel='noopener'
-										target='_blank'
-										href={url}>
-										Repositorio
-									</a>
+									<span>Repositorio</span>
 								</Toggle>
 							</li>
 						))}
 					</ul>
 					<ul className='relative'>
 						{website.map(({ url, icon }, index) => (
-							<li key={index}>
+							<li
+								key={index}
+								className='[&>button]:bg-accent-foreground [&>button]:text-secondary dark:[&>button]:bg-primary-foreground dark:[&>button]:text-secondary-foreground dark:hover:[&>button]:bg-white hover:dark:[&>button]:text-secondary'>
 								<Toggle
+									size='sm'
 									variant='outline'
-									className='space-x-2 px-2 py-4 hover:bg-secondary-foreground hover:text-secondary'>
+									className='space-x-2 px-2 py-4'>
 									<span>{icon}</span>
 									<a
 										referrerPolicy='no-referrer'
