@@ -10,10 +10,11 @@ import {
 	ViteIcon
 } from '@ui/icon'
 const urlGithub = 'https://github.com/Amyssyko'
+const imageHost = 'src/images'
 
-import mantenimientoImage from 'public/images/537shots_so.webp'
-import searchMediaIamge from 'public/images/639shots_so.webp'
-import restaurantImage from 'public/images/732shots_so.webp'
+import mantenimientoImage from 'src/images/537shots_so.webp'
+import searchMediaIamge from 'src/images/639shots_so.webp'
+import restaurantImage from 'src/images/732shots_so.webp'
 
 const data: Project[] = [
 	{
@@ -95,7 +96,7 @@ const Proyects = () => {
 		<SectionContainer
 			id='projects'
 			data-section='proyects'>
-			<h2 className='relative mb-6 flex items-center gap-x-3 text-3xl font-semibold text-orange-600'>
+			<h2 className='relative flex items-center gap-x-3 mb-6 font-semibold text-3xl text-orange-600'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					width='24'
@@ -114,7 +115,7 @@ const Proyects = () => {
 				Proyectos
 			</h2>
 
-			<ol className='grid gap-8 md:mx-6'>
+			<ol className='gap-8 grid md:mx-6'>
 				{data.map((item) => {
 					return (
 						<ProyectItem
