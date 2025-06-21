@@ -10,10 +10,11 @@ import {
 	ViteIcon
 } from '@ui/icon'
 const urlGithub = 'https://github.com/Amyssyko'
+const imageHost = 'src/images'
 
-import mantenimientoImage from '/images/537shots_so.webp'
-import searchMediaIamge from '/images/639shots_so.webp'
-import restaurantImage from '/images/732shots_so.webp'
+import mantenimientoImage from 'src/images/537shots_so.webp'
+import searchMediaIamge from 'src/images/639shots_so.webp'
+import restaurantImage from 'src/images/732shots_so.webp'
 
 const data: Project[] = [
 	{
