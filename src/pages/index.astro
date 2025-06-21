@@ -2,12 +2,12 @@
 import '@styles/globals.css'
 import Layout from '../layouts/Layout.astro'
 import Navbar from '@components/Navbar'
-import { ModeToggle } from '@components/ModeToggle'
 import About from '@components/About'
 import WorkExperience from '@components/WorkExperience'
 import Proyects from '@components/Proyects'
 import AboutMe from '@components/AboutMe'
 import Footer from '@components/Footer'
+import ThemeToggler from '@components/ModeToggle'
 ---
 
 <script is:inline>
@@ -35,9 +35,10 @@ import Footer from '@components/Footer'
 </script>
 
 <Layout title='Portfolio de Amyssyko'>
-	<header class='flex justify-between items-center px-8 pt-4 h-10 gap-x-4'>
+	<header class='flex justify-between items-center gap-x-4 px-8 pt-4 h-10'>
 		<Navbar client:visible />
-		<ModeToggle client:visible />
+
+		<ThemeToggler client:visible />
 	</header>
 
 	<main class='px-8 md:px-40 lg:px-64 2xl:px-[380px]'>

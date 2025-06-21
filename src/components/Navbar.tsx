@@ -16,7 +16,7 @@ const Navbar = () => {
 					{data.map((item) => (
 						<li key={item.id}>
 							<a
-								className='relative inline-flex cursor-pointer items-center justify-center whitespace-nowrap text-lg font-semibold text-primary transition-all ease-in-out before:absolute before:bottom-0 before:left-[50%] before:h-[1px] before:w-0 before:origin-center before:bg-primary before:transition-[width] before:duration-700 before:ease-in-out after:absolute after:bottom-0 after:right-[50%] after:h-[1px] after:w-0 after:origin-center after:bg-primary after:transition-[width] after:duration-700 after:ease-in-out hover:text-secondary-foreground hover:before:w-[50%] hover:after:w-[50%] dark:before:bg-gray-100 dark:after:bg-gray-100 dark:hover:text-gray-100 md:text-xl'
+								className='before:bg-primary after:bg-primary text-primary hover:text-secondary-foreground relative inline-flex cursor-pointer items-center justify-center text-lg font-semibold whitespace-nowrap transition-all ease-in-out before:absolute before:bottom-0 before:left-[50%] before:h-[1px] before:w-0 before:origin-center before:transition-[width] before:duration-700 before:ease-in-out after:absolute after:right-[50%] after:bottom-0 after:h-[1px] after:w-0 after:origin-center after:transition-[width] after:duration-700 after:ease-in-out hover:before:w-[50%] hover:after:w-[50%] md:text-xl dark:before:bg-gray-100 dark:after:bg-gray-100 dark:hover:text-gray-100'
 								referrerPolicy='no-referrer'
 								rel='noopener'
 								target='_self'

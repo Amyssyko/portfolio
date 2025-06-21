@@ -24,7 +24,7 @@ const ProyectItem: FC<Project> = ({
 	return (
 		<li
 			key={id}
-			className='grid grid-cols-1 place-items-center justify-items-center gap-8 lg:grid-cols-2'>
+			className='justify-items-center place-items-center gap-8 grid grid-cols-1 lg:grid-cols-2'>
 			<div
 				className='aspect-video overflow-hidden'
 				onMouseMove={handleMouseMove}
@@ -45,15 +45,15 @@ const ProyectItem: FC<Project> = ({
 					}}
 				/>
 			</div>
-			<div className='grid place-content-center items-center justify-items-center space-y-2'>
-				<h3 className='text-balance text-center text-2xl font-medium md:text-start md:text-3xl'>
+			<div className='justify-items-center items-center place-content-center space-y-2 grid'>
+				<h3 className='font-medium text-2xl md:text-3xl text-center md:text-start'>
 					{title}
 				</h3>
 				<ul className='flex flex-row gap-2'>
 					{tegnology.map(({ id, name, icon }) => (
 						<li
 							key={id}
-							className='[&>button]:bg-accent-foreground [&>button]:text-secondary dark:[&>button]:bg-primary-foreground dark:[&>button]:text-secondary-foreground dark:hover:[&>button]:bg-white hover:dark:[&>button]:text-secondary'>
+							className='dark:[&>button]:bg-primary dark:hover:[&>button]:bg-white [&>button]:text-secondary hover:dark:[&>button]:text-secondary dark:[&>button]:text-secondary-foreground [&>button]:bg-accent-foreground'>
 							<Toggle
 								size='sm'
 								variant='outline'
@@ -66,12 +66,12 @@ const ProyectItem: FC<Project> = ({
 				</ul>
 
 				<p>{description}</p>
-				<div className='grid grid-cols-2 place-content-center justify-items-center gap-2'>
+				<div className='justify-items-center place-content-center gap-2 grid grid-cols-2'>
 					<ul>
 						{repository.map(({ url, icon }, index) => (
 							<li
 								key={index}
-								className='[&>button]:bg-accent-foreground [&>button]:text-secondary dark:[&>button]:bg-primary-foreground dark:[&>button]:text-secondary-foreground dark:hover:[&>button]:bg-white hover:dark:[&>button]:text-secondary'>
+								className='dark:[&>button]:bg-primary dark:hover:[&>button]:bg-white [&>button]:text-secondary hover:dark:[&>button]:text-secondary dark:[&>button]:text-secondary-foreground [&>button]:bg-accent-foreground'>
 								<Toggle
 									size='sm'
 									variant='outline'
@@ -92,7 +92,7 @@ const ProyectItem: FC<Project> = ({
 						{website.map(({ url, icon }, index) => (
 							<li
 								key={index}
-								className='[&>button]:bg-accent-foreground [&>button]:text-secondary dark:[&>button]:bg-primary-foreground dark:[&>button]:text-secondary-foreground dark:hover:[&>button]:bg-white hover:dark:[&>button]:text-secondary'>
+								className='dark:[&>button]:bg-primary dark:hover:[&>button]:bg-white [&>button]:text-secondary hover:dark:[&>button]:text-secondary dark:[&>button]:text-secondary-foreground [&>button]:bg-accent-foreground'>
 								<Toggle
 									size='sm'
 									variant='outline'

@@ -3,6 +3,16 @@ import SectionContainer from '@components/section-container'
 
 const data: Experience[] = [
 	{
+		id: 0,
+		role: 'Data Management Engineer & Data Governance',
+		company: 'Cacpe de Pastaza',
+		date: '2024 - Actualidad',
+		description:
+			'Implementación de sistema de gestión de datos y gobernanza, utilizando tecnologías como Python, SQL, Power BI, etc.',
+		more: 'Mas información',
+		url: 'https://www.cacpepas.fin.ec/'
+	},
+	{
 		id: 1,
 		role: 'Desarrollador Full Stack',
 		company: 'Freelancer',
@@ -29,7 +39,7 @@ const WorkExperience = () => {
 		<SectionContainer
 			id='experience'
 			data-section='experience'>
-			<h2 className='mb-6 flex items-center gap-x-3 text-3xl font-semibold text-green-600'>
+			<h2 className='flex items-center gap-x-3 mb-6 font-semibold text-green-600 text-3xl'>
 				<svg
 					className='size-8'
 					width='24'
@@ -55,37 +65,37 @@ const WorkExperience = () => {
 				{data.map(({ company, date, description, id, more, role, url }) => {
 					return (
 						<li key={id}>
-							<div className="relative mx-12 pb-12 before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 before:content-[''] dark:before:border-white/15 md:gap-10 md:space-x-4">
-								<div className='grid place-content-center items-stretch pt-1 md:grid-cols-2'>
-									<div className='sticky top-0'>
-										<span className='absolute -left-[43px] rounded-full text-5xl text-primary'>
+							<div className="before:block before:left-[-35px] before:absolute relative md:gap-10 md:space-x-4 mx-12 pb-12 dark:before:border-white/15 before:border-black/20 before:border-l-2 before:h-full before:content-['']">
+								<div className='items-stretch place-content-center grid md:grid-cols-2 pt-1'>
+									<div className='top-0 sticky'>
+										<span className='-left-[43px] absolute rounded-full text-primary text-5xl'>
 											•
 										</span>
-										<h3 className='text-balance text-xl font-bold text-yellow-500'>
+										<h3 className='font-bold text-yellow-500 text-xl'>
 											{role}
 										</h3>
-										<h4 className='text-balance text-xl font-semibold text-gray-600 dark:text-white'>
+										<h4 className='font-semibold text-gray-600 dark:text-white text-xl'>
 											{company}
 										</h4>
-										<time className='m-0 p-0 text-sm text-gray-600/80 dark:text-white/80'>
+										<time className='m-0 p-0 text-gray-600/80 dark:text-white/80 text-sm'>
 											{date}
 										</time>
 									</div>
 									<div className='relative pb-4 text-gray-600 dark:text-gray-300'>
-										<p className='text-pretty'>{description}</p>
-										<div className='flex items-center md:justify-start'>
+										<p className=''>{description}</p>
+										<div className='flex md:justify-start items-center'>
 											<a
 												referrerPolicy='no-referrer'
 												rel='noopener'
 												target='_blank'
 												href={url}
 												role='link'
-												className='text-lg font-medium text-yellow-600 hover:text-yellow-700 dark:text-yellow-200 dark:hover:text-yellow-300'>
+												className='font-medium text-yellow-600 hover:text-yellow-700 dark:hover:text-yellow-300 dark:text-yellow-200 text-lg'>
 												{more}
 											</a>
 											<svg
 												xmlns='http://www.w3.org/2000/svg'
-												className='icon icon-tabler icon-tabler-chevron-right w-5'
+												className='icon-tabler icon-tabler-chevron-right w-5 icon'
 												width='18'
 												height='18'
 												viewBox='0 0 24 24'

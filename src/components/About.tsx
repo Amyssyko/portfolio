@@ -3,12 +3,15 @@ import { Avatar, AvatarFallback, AvatarImage } from '@ui/avatar'
 import { Button } from '@ui/button'
 
 const About = () => {
+	const currentYear = new Date().getFullYear()
+	const birthYear = 2021
+	const yearsOfExperience = currentYear - birthYear
 	return (
 		<SectionContainer
 			id='about'
 			data-section='about'
-			className='grid gap-4 md:grid-cols-2'>
-			<div className='order-last flex flex-col items-center justify-center space-y-4'>
+			className='gap-4 grid md:grid-cols-2'>
+			<div className='flex flex-col justify-center items-center space-y-4 order-last'>
 				<Avatar className='size-40'>
 					<AvatarImage
 						src='https://avatars.githubusercontent.com/u/69484342'
@@ -18,7 +21,7 @@ const About = () => {
 				</Avatar>
 				<Button
 					type='button'
-					className='flex border-spacing-2 items-center gap-1 rounded-full border border-primary transition-colors ease-in-out hover:scale-105'
+					className='flex items-center gap-1 border border-primary rounded-full hover:scale-105 transition-colors ease-in-out border-spacing-2'
 					asChild>
 					<a
 						referrerPolicy='no-referrer'
@@ -30,9 +33,9 @@ const About = () => {
 				</Button>
 			</div>
 			<div>
-				<h1 className='text-3xl font-bold'>Bienvenido, soy David</h1>
-				<p className='mt-6 text-justify text-xl sm:text-start [&>strong]:font-semibold [&>strong]:text-yellow-600 dark:[&>strong]:text-yellow-200'>
-					+2 años de experiencia. &nbsp;
+				<h1 className='font-bold text-3xl'>Bienvenido, soy David</h1>
+				<p className='mt-6 [&>strong]:font-semibold [&>strong]:text-yellow-600 dark:[&>strong]:text-yellow-200 text-xl text-justify sm:text-start'>
+					{yearsOfExperience} años de experiencia. &nbsp;
 					<strong>
 						Ingeniero en Sistemas de Información, desarrollador Full Stack con
 						experiencia en el diseño y desarrollo de aplicaciones web y móviles.
@@ -46,7 +49,7 @@ const About = () => {
 				<div className='flex gap-4 pt-8'>
 					<Button
 						type='button'
-						className='flex border-spacing-2 items-center justify-between gap-1 rounded-full border border-primary transition-colors ease-in-out hover:scale-105 dark:text-secondary-foreground'>
+						className='flex justify-between items-center gap-1 border border-primary rounded-full dark:text-secondary-foreground hover:scale-105 transition-colors ease-in-out border-spacing-2'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width='24'
@@ -71,7 +74,7 @@ const About = () => {
 					</Button>
 					<Button
 						type='button'
-						className='flex border-spacing-2 items-center justify-between gap-1 rounded-full border border-primary transition-colors ease-in-out hover:scale-105 dark:text-secondary-foreground'>
+						className='flex justify-between items-center gap-1 border border-primary rounded-full dark:text-secondary-foreground hover:scale-105 transition-colors ease-in-out border-spacing-2'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							width='24'

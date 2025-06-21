@@ -1,54 +1,53 @@
-import { Button } from '@components/ui/button'
-import {
-	DropdownMenu,
-	DropdownMenuContent,
-	DropdownMenuItem,
-	DropdownMenuTrigger
-} from '@components/ui/dropdown-menu'
-import { Moon, Sun } from 'lucide-react'
-import * as React from 'react'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { MoonIcon, SunIcon } from 'lucide-react'
+import { useEffect, useState } from 'react'
 
-export function ModeToggle() {
-	const [theme, setThemeState] = React.useState<
-		'theme-light' | 'dark' | 'system'
-	>('theme-light')
+type ThemeTogglerProps = {
+	className?: string
+}
 
-	React.useEffect(() => {
-		const isDarkMode = document.documentElement.classList.contains('dark')
-		setThemeState(isDarkMode ? 'dark' : 'theme-light')
+export default function ThemeToggler({ className }: ThemeTogglerProps) {
+	const [_, setTheme] = useState<'light' | 'dark'>('light')
+
+	useEffect(() => {
+		const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+		setTheme(mediaQuery.matches ? 'dark' : 'light')
+
+		const handleChange = (e: MediaQueryListEvent) => {
+			setTheme(e.matches ? 'dark' : 'light')
+		}
+
+		mediaQuery.addEventListener('change', handleChange)
+		return () => mediaQuery.removeEventListener('change', handleChange)
 	}, [])
 
-	React.useEffect(() => {
-		const isDark =
-			theme === 'dark' ||
-			(theme === 'system' &&
-				window.matchMedia('(prefers-color-scheme: dark)').matches)
-		document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
-	}, [theme])
+	const switchTheme = () => {
+		document.documentElement.classList.toggle('dark')
+		localStorage.setItem(
+			'theme',
+			document.documentElement.classList.contains('dark') ? 'dark' : 'light'
+		)
+	}
+
+	const toggleTheme = () => {
+		if (!document.startViewTransition) {
+			switchTheme()
+			return
+		}
+
+		document.startViewTransition(switchTheme)
+	}
 
 	return (
-		<DropdownMenu>
-			<DropdownMenuTrigger asChild>
-				<Button
-					type='button'
-					variant='outline'
-					size='icon'>
-					<Sun className='size-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0' />
-					<Moon className='absolute size-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100' />
-					<span className='sr-only'>Toggle theme</span>
-				</Button>
-			</DropdownMenuTrigger>
-			<DropdownMenuContent align='end'>
-				<DropdownMenuItem onClick={() => setThemeState('theme-light')}>
-					Claro
-				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setThemeState('dark')}>
-					Oscuro
-				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setThemeState('system')}>
-					Sistema
-				</DropdownMenuItem>
-			</DropdownMenuContent>
-		</DropdownMenu>
+		<Button
+			onClick={toggleTheme}
+			variant='ghost'
+			size='icon'
+			className={cn('cursor-pointer rounded-full', className)}>
+			<SunIcon className='w-[1.2rem] h-[1.2rem] rotate-0 dark:-rotate-90 scale-100 dark:scale-0 transition-all' />
+			<MoonIcon className='absolute w-[1.2rem] h-[1.2rem] rotate-90 dark:rotate-0 scale-0 dark:scale-100 transition-all' />
+			<span className='sr-only'>Toggle theme</span>
+		</Button>
 	)
 }

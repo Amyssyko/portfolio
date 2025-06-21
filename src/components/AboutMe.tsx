@@ -6,7 +6,7 @@ const AboutMe = () => {
 			id='about-me'
 			data-section='about-me'
 			className='flex flex-col gap-4'>
-			<h2 className='mb-6 flex items-center gap-x-3 text-3xl font-semibold text-lime-600'>
+			<h2 className='flex items-center gap-x-3 mb-6 font-semibold text-lime-600 text-3xl'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					width='24'
@@ -24,8 +24,8 @@ const AboutMe = () => {
 				</svg>
 				Acerca de mí
 			</h2>
-			<article className='grid place-content-center items-center justify-items-center gap-4 md:mx-1 md:grid-cols-2 md:gap-32'>
-				<div className='order-last space-y-4 md:order-first [&>p>strong]:text-lime-600 [&>p]:text-pretty'>
+			<article className='justify-items-center items-center place-content-center gap-4 md:gap-32 grid md:grid-cols-2 md:mx-1'>
+				<div className='space-y-4 order-last md:order-first [&>p>strong]:text-lime-600 [&>p]:'>
 					<p>
 						<strong>
 							Ingeniero en Sistemas de Información,desarrollador Full Stack con
@@ -56,9 +56,9 @@ const AboutMe = () => {
 						tecnologías web y movil, música, cine y 🐈‍⬛.
 					</p>
 				</div>
-				<div className='aspect-square h-64 shadow-2xl shadow-cyan-500/50'>
+				<div className='shadow-2xl shadow-cyan-500/50 h-64 aspect-square'>
 					<img
-						className='h-64 w-full skew-x-6 rounded-xl border-4 border-neutral-950 object-cover object-top transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105'
+						className='border-4 border-neutral-950 rounded-xl w-full h-64 sm:h-full object-cover object-top md:group-hover:scale-105 md:scale-110 skew-x-6 transition duration-500'
 						src='https://avatars.githubusercontent.com/u/69484342'
 						alt='name'
 					/>

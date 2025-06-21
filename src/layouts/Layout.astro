@@ -100,17 +100,16 @@ const { title } = Astro.props
 		<link
 			rel='icon'
 			type='image/svg+xml'
-			href='/public/favicon.svg'
+			href='/favicon.svg'
 		/>
 		<meta
 			name='generator'
 			content={Astro.generator}
 		/>
 	</head>
-	<body class='grid h-dvh grid-rows-[auto_1fr_auto] gap-y-20'>
+	<body class='gap-y-20 grid grid-rows-[auto_1fr_auto] h-dvh'>
 		<div
-			class='absolute top-0 bottom-0 z-[-2] h-dvh w-full bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
-      dark:bg-[radial-gradient(ellipse_40%_80%_at_60%_-10%,rgba(120,119,198,0.3),rgba(255,255,255,0))]'>
+			class='top-0 bottom-0 z-[-2] absolute bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] dark:bg-[radial-gradient(ellipse_40%_80%_at_60%_-10%,rgba(120,119,198,0.3),rgba(255,255,255,0))] w-full h-dvh'>
 		</div>
 		<slot />
 	</body>
