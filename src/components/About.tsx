@@ -1,11 +1,10 @@
+import { currentExperience } from '@/lib/utils'
 import SectionContainer from '@components/section-container'
 import { Avatar, AvatarFallback, AvatarImage } from '@ui/avatar'
 import { Button } from '@ui/button'
 
 const About = () => {
-	const currentYear = new Date().getFullYear()
-	const birthYear = 2021
-	const yearsOfExperience = currentYear - birthYear
+	const yearsOfExperience = currentExperience()
 	return (
 		<SectionContainer
 			id='about'
@@ -45,7 +44,6 @@ const About = () => {
 					complejos que impulsen mi crecimiento profesional para optimizar mis
 					competencias técnicas.
 				</p>
-
 				<div className='flex gap-4 pt-8'>
 					<Button
 						type='button'

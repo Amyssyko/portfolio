@@ -7,7 +7,7 @@ type ThemeTogglerProps = {
 	className?: string
 }
 
-export default function ThemeToggler({ className }: ThemeTogglerProps) {
+export const ThemeToggler = ({ className }: ThemeTogglerProps) => {
 	const [_, setTheme] = useState<'light' | 'dark'>('light')
 
 	useEffect(() => {
@@ -44,7 +44,7 @@ export default function ThemeToggler({ className }: ThemeTogglerProps) {
 			onClick={toggleTheme}
 			variant='ghost'
 			size='icon'
-			className={cn('cursor-pointer rounded-full', className)}>
+			className={cn('rounded-full cursor-pointer', className)}>
 			<SunIcon className='w-[1.2rem] h-[1.2rem] rotate-0 dark:-rotate-90 scale-100 dark:scale-0 transition-all' />
 			<MoonIcon className='absolute w-[1.2rem] h-[1.2rem] rotate-90 dark:rotate-0 scale-0 dark:scale-100 transition-all' />
 			<span className='sr-only'>Toggle theme</span>

@@ -7,7 +7,7 @@ import WorkExperience from '@components/WorkExperience'
 import Proyects from '@components/Proyects'
 import AboutMe from '@components/AboutMe'
 import Footer from '@components/Footer'
-import ThemeToggler from '@components/ModeToggle'
+import { ThemeToggler } from '@components/ModeToggle'
 ---
 
 <script is:inline>
@@ -37,10 +37,8 @@ import ThemeToggler from '@components/ModeToggle'
 <Layout title='Portfolio de Amyssyko'>
 	<header class='flex justify-between items-center gap-x-4 px-8 pt-4 h-10'>
 		<Navbar client:visible />
-
 		<ThemeToggler client:visible />
 	</header>
-
 	<main class='px-8 md:px-40 lg:px-64 2xl:px-[380px]'>
 		<About client:visible />
 		<br />

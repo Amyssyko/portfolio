@@ -1,4 +1,10 @@
 import type { Project } from '@/env'
+import {
+	mantenimientoImage,
+	restaurantImage,
+	searchMediaImage,
+	urlGithub
+} from '@/lib/utils'
 import ProyectItem from '@components/proyect-item'
 import SectionContainer from '@components/section-container'
 import {
@@ -9,17 +15,11 @@ import {
 	TailwindCSSIcon,
 	ViteIcon
 } from '@ui/icon'
-const urlGithub = 'https://github.com/Amyssyko'
-const imageHost = 'src/images'
-
-import mantenimientoImage from 'src/images/537shots_so.webp'
-import searchMediaIamge from 'src/images/639shots_so.webp'
-import restaurantImage from 'src/images/732shots_so.webp'
 
 const data: Project[] = [
 	{
 		id: 1,
-		image: searchMediaIamge,
+		image: searchMediaImage,
 		title: 'Buscador de Multimedia',
 		tegnology: [
 			{
