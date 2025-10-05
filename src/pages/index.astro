@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro'
 import Navbar from '@components/Navbar'
 import About from '@components/About'
 import WorkExperience from '@components/WorkExperience'
-import Proyects from '@components/Proyects'
+import Proyects from '@/components/Projects'
 import AboutMe from '@components/AboutMe'
 import Footer from '@components/Footer'
 import { ThemeToggler } from '@components/ModeToggle'
@@ -36,17 +36,17 @@ import { ThemeToggler } from '@components/ModeToggle'
 
 <Layout title='Portfolio de Amyssyko'>
 	<header class='flex justify-between items-center gap-x-4 px-8 pt-4 h-10'>
-		<Navbar client:visible />
-		<ThemeToggler client:visible />
+		<Navbar client:idle />
+		<ThemeToggler client:idle />
 	</header>
-	<main class='px-8 md:px-40 lg:px-64 2xl:px-[380px]'>
-		<About client:visible />
+	<main class='px-8 md:px-40 lg:px-64 2xl:px-[380px] overflow-x-clip'>
+		<About client:idle />
 		<br />
-		<WorkExperience client:visible />
+		<WorkExperience client:idle />
 		<br />
-		<Proyects client:visible />
+		<Proyects client:idle />
 		<br />
-		<AboutMe client:visible />
+		<AboutMe client:idle />
 	</main>
 	<Footer client:only='react' />
 </Layout>

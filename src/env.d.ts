@@ -4,7 +4,7 @@ export type Project = {
 	id: number
 	title: string
 	image: ImageMetadata
-	tegnology: Technology[]
+	technology: technology[]
 	description: string
 	repository: Repository[]
 	website: Repository[]
@@ -15,7 +15,7 @@ type Repository = {
 	icon: JSX.Element
 }
 
-type Technology = {
+type technology = {
 	id: number
 	name: string
 	icon: JSX.Element

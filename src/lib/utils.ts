@@ -17,7 +17,7 @@ export const formattedDate = new Intl.DateTimeFormat('es-ES', {
 
 export const currentExperience = (): number => {
 	const currentYear = new Date().getFullYear()
-	const birthYear = 2021
+	const birthYear = new Date('2021-02-21').getFullYear()
 	const yearsOfExperience = currentYear - birthYear
 	return yearsOfExperience
 }

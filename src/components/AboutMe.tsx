@@ -1,4 +1,5 @@
 import SectionContainer from '@components/section-container'
+import { Button } from './ui/button'
 
 const AboutMe = () => {
 	return (
@@ -25,12 +26,12 @@ const AboutMe = () => {
 				Acerca de mí
 			</h2>
 			<article className='justify-items-center items-center place-content-center gap-4 md:gap-32 grid md:grid-cols-2 md:mx-1'>
-				<div className='space-y-4 order-last md:order-first [&>p>strong]:text-lime-600 [&>p]:'>
+				<div className='space-y-4 order-last md:order-first [&>p]:font-medium text-gray-600 [&>p>strong]:text-lime-600 dark:text-gray-300 text-justify'>
 					<p>
 						<strong>
-							Ingeniero en Sistemas de Información,desarrollador Full Stack con
-							experiencia en el diseño y desarrollo de aplicaciones web y
-							móviles.
+							Ingeniero en Sistemas de Información, desarrollador de software,
+							Data Science con experiencia en data governance y análisis de
+							datos.
 						</strong>
 					</p>
 					<p>
@@ -40,25 +41,43 @@ const AboutMe = () => {
 						competencias técnicas.
 					</p>
 					<p>
-						<strong>Conocimientos:</strong> HTML, CSS, JavaScript, TypeScript,
-						React, Nextjs, Node.js, Express, Astro, Angular, PostgreSQL, MySQL,
-						Supabase, entre otros.
+						<strong>Herramientas de Desarrollo:</strong> HTML, CSS, TypeScript,
+						React, Nextjs, Node.js, Express, Astro, Angular, R, Python, Power
+						Bi, entre otros.
 					</p>
 					<p>
-						<strong>Herramientas:</strong> Visual Studio Code, Android Studio,
-						Git, Bash, Postman, Slack, Discord, Zoom, Google Meet.
+						<strong>Herramientas en Base de Datos:</strong> PostgreSQL, MySQL,
+						MSSQL.
+					</p>
+					<p>
+						<strong>Herramientas de Productividad:</strong> Visual Studio Code,
+						Android Studio, Git, Bash, Postman, Slack, Discord, Zoom, Google
+						Meet, Data Grip, Data Spell, etc.
 					</p>
 					<p>
 						<strong>Idiomas:</strong> Español (nativo), Inglés (B1).
 					</p>
 					<p>
 						<strong>Intereses:</strong> Desarrollo de software, diseño web,
-						tecnologías web y movil, música, cine y 🐈‍⬛.
+						tecnologías web y movil, música, cine, 🐈‍⬛ &
+						<Button
+							asChild
+							className='inline-block mx-1 p-0 align-baseline'
+							variant='link'>
+							<a
+								referrerPolicy='no-referrer'
+								target='_blank'
+								rel='noopener noreferrer'
+								href='https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02?si=uqY2xnd2Tim9spmYC7S6zA'>
+								Taylor Swift
+							</a>
+						</Button>
+						.
 					</p>
 				</div>
-				<div className='shadow-2xl shadow-cyan-500/50 h-64 aspect-square'>
+				<div className='shadow-2xl shadow-cyan-500/50 h-52 aspect-square overflow-clip'>
 					<img
-						className='border-4 border-neutral-950 rounded-xl w-full h-64 sm:h-full object-cover object-top md:group-hover:scale-105 md:scale-110 skew-x-6 transition duration-500'
+						className='border-4 border-neutral-950 w-full sm:h-full object-contain object-top md:scale-110 skew-x-6 transition duration-500'
 						src='https://avatars.githubusercontent.com/u/69484342'
 						alt='name'
 					/>

@@ -1,3 +1,4 @@
+import ProyectItem from '@/components/project-item'
 import type { Project } from '@/env'
 import {
 	mantenimientoImage,
@@ -5,7 +6,6 @@ import {
 	searchMediaImage,
 	urlGithub
 } from '@/lib/utils'
-import ProyectItem from '@components/proyect-item'
 import SectionContainer from '@components/section-container'
 import {
 	BrowserIcon,
@@ -21,7 +21,7 @@ const data: Project[] = [
 		id: 1,
 		image: searchMediaImage,
 		title: 'Buscador de Multimedia',
-		tegnology: [
+		technology: [
 			{
 				id: 1,
 				name: 'Vite',
@@ -40,7 +40,7 @@ const data: Project[] = [
 		id: 2,
 		image: restaurantImage,
 		title: 'Restaurantes App',
-		tegnology: [
+		technology: [
 			{
 				id: 0,
 				name: 'NextJS',
@@ -77,7 +77,7 @@ const data: Project[] = [
 		id: 3,
 		image: mantenimientoImage,
 		title: 'Juego de Mantenimiento de PC',
-		tegnology: [
+		technology: [
 			{ id: 1, name: 'Vite', icon: <ViteIcon /> },
 			{ id: 2, name: 'TailwindCSS', icon: <TailwindCSSIcon /> },
 			{ id: 3, name: 'React', icon: <ReactIcon /> }
@@ -115,7 +115,7 @@ const Proyects = () => {
 				Proyectos
 			</h2>
 
-			<ol className='gap-8 grid md:mx-6'>
+			<ol className='gap-8 grid md:mx-6 overflow-x-clip'>
 				{data.map((item) => {
 					return (
 						<ProyectItem

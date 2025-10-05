@@ -1,12 +1,12 @@
 import type { Project } from '@/env'
-import { Toggle } from '@ui/toggle'
 import { useState, type FC } from 'react'
+import { Button } from './ui/button'
 
 const ProyectItem: FC<Project> = ({
 	id,
 	title,
 	image,
-	tegnology,
+	technology,
 	description,
 	repository,
 	website
@@ -36,6 +36,8 @@ const ProyectItem: FC<Project> = ({
 					}`}
 					width={500}
 					height={500}
+					loading='lazy'
+					decoding='async'
 					src={image.src}
 					alt={title}
 					onBlur={() => setIsHovered(false)}
@@ -50,17 +52,16 @@ const ProyectItem: FC<Project> = ({
 					{title}
 				</h3>
 				<ul className='flex flex-row gap-2'>
-					{tegnology.map(({ id, name, icon }) => (
+					{technology.map(({ id, name, icon }) => (
 						<li
 							key={id}
-							className='dark:[&>button]:bg-primary dark:hover:[&>button]:bg-white [&>button]:text-secondary hover:dark:[&>button]:text-secondary dark:[&>button]:text-secondary-foreground [&>button]:bg-accent-foreground'>
-							<Toggle
+							className='[&>button]:space-x-1 dark:[&>button]:bg-secondary dark:hover:[&>button]:bg-slate-600 [&>button]:text-secondary hover:dark:[&>button]:text-white dark:[&>button]:text-white hover:[&>button]:scale-105 duration-200 [&>button]:bg-accent-foreground'>
+							<Button
 								size='sm'
-								variant='outline'
-								className='space-x-2 px-2 py-4'>
+								variant='default'>
 								<span>{icon}</span>
 								<span>{name}</span>
-							</Toggle>
+							</Button>
 						</li>
 					))}
 				</ul>
@@ -71,20 +72,22 @@ const ProyectItem: FC<Project> = ({
 						{repository.map(({ url, icon }, index) => (
 							<li
 								key={index}
-								className='dark:[&>button]:bg-primary dark:hover:[&>button]:bg-white [&>button]:text-secondary hover:dark:[&>button]:text-secondary dark:[&>button]:text-secondary-foreground [&>button]:bg-accent-foreground'>
-								<Toggle
+								className='[&>button]:space-x-1 dark:[&>button]:bg-primary dark:hover:[&>button]:bg-slate-600 [&>button]:text-secondary hover:dark:[&>button]:text-white dark:[&>button]:text-white hover:[&>button]:scale-105 duration-200 [&>button]:bg-accent-foreground'>
+								<Button
+									asChild
 									size='sm'
-									variant='outline'
-									className='space-x-2 px-2 py-4'>
-									<span>{icon}</span>
+									variant='default'>
 									<a
-										referrerPolicy='no-referrer'
-										rel='noopener'
+										href={url}
 										target='_blank'
-										href={url}>
-										Repositorio
+										rel='noopener noreferrer'
+										referrerPolicy='no-referrer'
+										className='inline-flex items-center gap-2'
+										aria-label='Repositorio en GitHub'>
+										<span>{icon}</span>
+										<span>Repositorio</span>
 									</a>
-								</Toggle>
+								</Button>
 							</li>
 						))}
 					</ul>
@@ -92,20 +95,22 @@ const ProyectItem: FC<Project> = ({
 						{website.map(({ url, icon }, index) => (
 							<li
 								key={index}
-								className='dark:[&>button]:bg-primary dark:hover:[&>button]:bg-white [&>button]:text-secondary hover:dark:[&>button]:text-secondary dark:[&>button]:text-secondary-foreground [&>button]:bg-accent-foreground'>
-								<Toggle
+								className='[&>button]:space-x-1 dark:[&>button]:bg-primary dark:hover:[&>button]:bg-slate-600 [&>button]:text-secondary hover:dark:[&>button]:text-white dark:[&>button]:text-white hover:[&>button]:scale-105 duration-200 [&>button]:bg-accent-foreground'>
+								<Button
+									asChild
 									size='sm'
-									variant='outline'
-									className='space-x-2 px-2 py-4'>
-									<span>{icon}</span>
+									variant='default'>
 									<a
-										referrerPolicy='no-referrer'
-										rel='noopener'
+										href={url}
 										target='_blank'
-										href={url}>
-										WebSite
+										rel='noopener noreferrer'
+										referrerPolicy='no-referrer'
+										className='inline-flex items-center gap-2'
+										aria-label='Sitio web del proyecto'>
+										<span>{icon}</span>
+										<span>Website</span>
 									</a>
-								</Toggle>
+								</Button>
 							</li>
 						))}
 					</ul>

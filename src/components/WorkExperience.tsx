@@ -14,7 +14,7 @@ const data: Experience[] = [
 	},
 	{
 		id: 1,
-		role: 'Desarrollador Full Stack',
+		role: 'Desarrollador Software',
 		company: 'Freelancer',
 		date: '2022 - Actualidad',
 		description:
@@ -61,14 +61,14 @@ const WorkExperience = () => {
 				</svg>
 				Experiencia laboral
 			</h2>
-			<ol>
+			<ol className='overflow-x-clip'>
 				{data.map(({ company, date, description, id, more, role, url }) => {
 					return (
 						<li key={id}>
-							<div className="before:block before:left-[-35px] before:absolute relative md:gap-10 md:space-x-4 mx-12 pb-12 dark:before:border-white/15 before:border-black/20 before:border-l-2 before:h-full before:content-['']">
+							<div className="before:block before:left-[-35px] before:absolute relative md:gap-10 md:space-x-4 mx-12 md:pb-12 dark:before:border-white/15 before:border-black/20 before:border-l-2 before:h-full before:content-['']">
 								<div className='items-stretch place-content-center grid md:grid-cols-2 pt-1'>
 									<div className='top-0 sticky'>
-										<span className='-left-[43px] absolute rounded-full text-primary text-5xl'>
+										<span className='-top-2 -left-[42px] absolute rounded-full text-primary text-5xl'>
 											•
 										</span>
 										<h3 className='font-bold text-yellow-500 text-xl'>

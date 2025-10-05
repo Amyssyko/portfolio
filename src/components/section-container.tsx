@@ -16,6 +16,7 @@ const SectionContainer: FC<SectionContainerProps> = ({
 		<section
 			className={cn('flex flex-col gap-4', className)}
 			id={id}
+			aria-labelledby={id}
 			data-section={id}>
 			{children}
 		</section>

@@ -8,21 +8,21 @@ const data = [
 const Navbar = () => {
 	return (
 		<header className='w-full'>
-			<nav className='grid justify-items-center'>
-				<ul
-					className='flex space-x-4'
-					about='Navegación'
-					aria-label='Navegación'>
+			<nav
+				className='justify-items-center grid overflow-x-clip'
+				aria-label='Navegación'>
+				<ul className='flex space-x-4'>
 					{data.map((item) => (
 						<li key={item.id}>
 							<a
-								className='before:bg-primary after:bg-primary text-primary hover:text-secondary-foreground relative inline-flex cursor-pointer items-center justify-center text-lg font-semibold whitespace-nowrap transition-all ease-in-out before:absolute before:bottom-0 before:left-[50%] before:h-px before:w-0 before:origin-center before:transition-[width] before:duration-700 before:ease-in-out after:absolute after:right-[50%] after:bottom-0 after:h-px after:w-0 after:origin-center after:transition-[width] after:duration-700 after:ease-in-out hover:before:w-[50%] hover:after:w-[50%] md:text-xl dark:before:bg-gray-100 dark:after:bg-gray-100 dark:hover:text-gray-100'
-								referrerPolicy='no-referrer'
-								rel='noopener'
+								className='inline-flex after:right-[50%] before:bottom-0 after:bottom-0 before:left-[50%] before:absolute after:absolute relative justify-center items-center before:bg-primary after:bg-primary dark:before:bg-gray-100 dark:after:bg-gray-100 before:w-0 after:w-0 hover:before:w-[50%] hover:after:w-[50%] before:h-px after:h-px font-semibold text-primary hover:text-secondary-foreground dark:hover:text-gray-100 text-lg md:text-xl whitespace-nowrap before:origin-center after:origin-center transition-all before:transition-[width] after:transition-[width] before:duration-700 after:duration-700 ease-in-out before:ease-in-out after:ease-in-out cursor-pointer'
+								rel={
+									item.value === '#contact' ? 'noopener noreferrer' : undefined
+								}
 								target='_self'
 								href={
 									item.value === '#contact' ?
-										'mailto:miduga@gmail.com'
+										'mailto:cristian-0005@live.com'
 									:	item.value
 								}
 								aria-label={item.title}>

@@ -36,13 +36,15 @@ const About = () => {
 				<p className='mt-6 [&>strong]:font-semibold [&>strong]:text-yellow-600 dark:[&>strong]:text-yellow-200 text-xl text-justify sm:text-start'>
 					{yearsOfExperience} años de experiencia. &nbsp;
 					<strong>
-						Ingeniero en Sistemas de Información, desarrollador Full Stack con
-						experiencia en el diseño y desarrollo de aplicaciones web y móviles.
+						Ingeniero en Sistemas de Información, desarrollador de software,
+						actualmente en Data Governance en Cacpe Pastaza.
 					</strong>
-					&nbsp; Entusiasta de la innovación tecnológica y la ingeniería de
-					software, disfruto adquirir nuevos conocimientos y enfrentar retos
-					complejos que impulsen mi crecimiento profesional para optimizar mis
-					competencias técnicas.
+					&nbsp;
+					<br />
+					Entusiasta de la innovación tecnológica y la ingeniería de software,
+					disfruto adquirir nuevos conocimientos y enfrentar retos complejos que
+					impulsen mi crecimiento profesional para optimizar mis competencias
+					técnicas.
 				</p>
 				<div className='flex gap-4 pt-8'>
 					<Button
@@ -66,7 +68,7 @@ const About = () => {
 							referrerPolicy='no-referrer'
 							rel='noopener'
 							target='_blank'
-							href='mailto:cristian-0005@live.com'>
+							href='mailto:sleep.mei.0005@gmail.com'>
 							Contáctame
 						</a>
 					</Button>
