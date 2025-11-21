@@ -37,6 +37,7 @@ const data: Experience[] = [
 const WorkExperience = () => {
 	return (
 		<SectionContainer
+			className='mt-20'
 			id='experience'
 			data-section='experience'>
 			<h2 className='flex items-center gap-x-3 mb-6 font-semibold text-green-600 text-3xl'>
@@ -65,7 +66,7 @@ const WorkExperience = () => {
 				{data.map(({ company, date, description, id, more, role, url }) => {
 					return (
 						<li key={id}>
-							<div className="before:block before:left-[-35px] before:absolute relative md:gap-10 md:space-x-4 mx-12 md:pb-12 dark:before:border-white/15 before:border-black/20 before:border-l-2 before:h-full before:content-['']">
+							<div className="before:block before:left-[-35px] before:absolute relative md:gap-10 md:space-x-4 mx-12 md:pb-12 before:border-black/20 dark:before:border-white/15 before:border-l-2 before:h-full before:content-['']">
 								<div className='items-stretch place-content-center grid md:grid-cols-2 pt-1'>
 									<div className='top-0 sticky'>
 										<span className='-top-2 -left-[42px] absolute rounded-full text-primary text-5xl'>
@@ -95,7 +96,7 @@ const WorkExperience = () => {
 											</a>
 											<svg
 												xmlns='http://www.w3.org/2000/svg'
-												className='icon-tabler icon-tabler-chevron-right w-5 icon'
+												className='icon-tabler-chevron-right w-5 icon-tabler icon'
 												width='18'
 												height='18'
 												viewBox='0 0 24 24'

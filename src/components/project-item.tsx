@@ -24,14 +24,14 @@ const ProyectItem: FC<Project> = ({
 	return (
 		<li
 			key={id}
-			className='justify-items-center place-items-center gap-8 grid grid-cols-1 lg:grid-cols-2'>
+			className='justify-items-center place-items-center gap-8 grid grid-cols-1 md:grid-cols-2'>
 			<div
 				className='aspect-video overflow-hidden'
 				onMouseMove={handleMouseMove}
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}>
 				<img
-					className={`h-full rounded-3xl border-zinc-800 object-contain duration-200 md:h-[350px] ${
+					className={`h-full rounded-3xl border-zinc-800 object-contain duration-200 md:h-auto ${
 						isHovered ? 'scale-150 contrast-125' : 'scale-100'
 					}`}
 					width={500}
@@ -47,7 +47,7 @@ const ProyectItem: FC<Project> = ({
 					}}
 				/>
 			</div>
-			<div className='justify-items-center items-center place-content-center space-y-2 grid'>
+			<div className='justify-items-center md:items-center md:place-content-center space-y-2 grid'>
 				<h3 className='font-medium text-2xl md:text-3xl text-center md:text-start'>
 					{title}
 				</h3>

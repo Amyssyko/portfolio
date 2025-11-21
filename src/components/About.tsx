@@ -33,7 +33,7 @@ const About = () => {
 			</div>
 			<div>
 				<h1 className='font-bold text-3xl'>Bienvenido, soy David</h1>
-				<p className='mt-6 [&>strong]:font-semibold [&>strong]:text-yellow-600 dark:[&>strong]:text-yellow-200 text-xl text-justify sm:text-start'>
+				<p className='mt-6 [&>strong]:font-semibold [&>strong]:text-yellow-600 dark:[&>strong]:text-yellow-200 md:text-xl text-justify sm:text-start'>
 					{yearsOfExperience} años de experiencia. &nbsp;
 					<strong>
 						Ingeniero en Sistemas de Información, desarrollador de software,

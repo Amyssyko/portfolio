@@ -6,7 +6,7 @@ const AboutMe = () => {
 		<SectionContainer
 			id='about-me'
 			data-section='about-me'
-			className='flex flex-col gap-4'>
+			className='flex flex-col gap-4 mt-20'>
 			<h2 className='flex items-center gap-x-3 mb-6 font-semibold text-lime-600 text-3xl'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'

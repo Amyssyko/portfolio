@@ -1,6 +1,7 @@
 import ProyectItem from '@/components/project-item'
 import type { Project } from '@/env'
 import {
+	ciiuImage,
 	mantenimientoImage,
 	restaurantImage,
 	searchMediaImage,
@@ -89,11 +90,26 @@ const data: Project[] = [
 		website: [
 			{ url: 'https://mantenimiento-game.vercel.app/', icon: <BrowserIcon /> }
 		]
+	},
+	{
+		id: 4,
+		image: ciiuImage,
+		title: 'CIIU API',
+		technology: [
+			{ id: 1, name: 'Vite', icon: <ViteIcon /> },
+			{ id: 2, name: 'TailwindCSS', icon: <TailwindCSSIcon /> },
+			{ id: 3, name: 'React', icon: <ReactIcon /> }
+		],
+		description:
+			'Interfaz para consultar la Clasificación Industrial Internacional Uniforme (CIIU).',
+		repository: [{ url: `${urlGithub}/ciiu`, icon: <GithubIcon /> }],
+		website: [{ url: `${urlGithub}/ciiu`, icon: <BrowserIcon /> }]
 	}
 ]
 const Proyects = () => {
 	return (
 		<SectionContainer
+			className='mt-20'
 			id='projects'
 			data-section='proyects'>
 			<h2 className='relative flex items-center gap-x-3 mb-6 font-semibold text-orange-600 text-3xl'>

@@ -7,7 +7,6 @@ import WorkExperience from '@components/WorkExperience'
 import Proyects from '@/components/Projects'
 import AboutMe from '@components/AboutMe'
 import Footer from '@components/Footer'
-import { ThemeToggler } from '@components/ModeToggle'
 ---
 
 <script is:inline>
@@ -35,11 +34,11 @@ import { ThemeToggler } from '@components/ModeToggle'
 </script>
 
 <Layout title='Portfolio de Amyssyko'>
-	<header class='flex justify-between items-center gap-x-4 px-8 pt-4 h-10'>
+	<header class='flex justify-between items-center gap-x-4 pt-4 h-10'>
 		<Navbar client:idle />
-		<ThemeToggler client:idle />
 	</header>
-	<main class='px-8 md:px-40 lg:px-64 2xl:px-[380px] overflow-x-clip'>
+	<main
+		class='space-y-60 grid px-8 md:px-40 lg:px-64 2xl:px-[380px] overflow-x-clip'>
 		<About client:idle />
 		<br />
 		<WorkExperience client:idle />
@@ -47,6 +46,7 @@ import { ThemeToggler } from '@components/ModeToggle'
 		<Proyects client:idle />
 		<br />
 		<AboutMe client:idle />
+		<br />
 	</main>
 	<Footer client:only='react' />
 </Layout>
