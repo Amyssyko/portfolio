@@ -9,6 +9,11 @@ export default defineConfig({
 	vite: {
 		plugins: [tailwindcss()]
 	},
-
-	integrations: [react()]
+	integrations: [
+		react({
+			babel: {
+				plugins: [['babel-plugin-react-compiler']]
+			}
+		})
+	]
 })
