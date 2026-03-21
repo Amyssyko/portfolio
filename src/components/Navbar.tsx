@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { ThemeToggler } from './ModeToggle'
 
 const data = [
-	{ id: 1, title: 'Sobre mí', value: '#about-me' },
-	{ id: 2, title: 'Experiencia laboral', value: '#experience' },
-	{ id: 3, title: 'Proyectos', value: '#projects' },
+	{ id: 1, title: 'Experiencia laboral', value: '#experience' },
+	{ id: 2, title: 'Proyectos', value: '#projects' },
+	{ id: 3, title: 'Sobre mí', value: '#about-me' },
 	{ id: 4, title: 'Contacto', value: '#contact' }
 ]
 
@@ -35,22 +35,22 @@ const Navbar = () => {
 	}, [])
 
 	return (
-		<header className='fixed top-0 z-50 w-full bg-white shadow dark:bg-gray-900'>
+		<header className='bg-background/95 supports-backdrop-filter:bg-background/80 border-border/50 text-foreground fixed top-0 z-50 w-full border-b shadow-sm backdrop-blur'>
 			<nav
 				className='mx-auto max-w-7xl px-4 sm:px-6 md:flex md:items-center-safe md:justify-between lg:px-8'
 				aria-label='Navegación principal'>
 				{/* Contenedor principal */}
 				<div className='flex h-16 items-center justify-between md:justify-start'>
-					<div className='text-primary text-xl font-bold'>Mi Portafolio</div>
+					<div className='text-foreground text-xl font-bold'>Mi Portafolio</div>
 					{/* Botón hamburguesa */}
 					<button
-						className='text-primary focus:outline-none md:hidden'
+						className='text-foreground focus:outline-none md:hidden'
 						onClick={() => setMenuOpen(!menuOpen)}
 						aria-label='Abrir menú'>
 						<div className='flex flex-col items-center justify-center space-y-1'>
-							<span className='bg-primary block h-0.5 w-6'></span>
-							<span className='bg-primary block h-0.5 w-6'></span>
-							<span className='bg-primary block h-0.5 w-6'></span>
+							<span className='bg-foreground block h-0.5 w-6'></span>
+							<span className='bg-foreground block h-0.5 w-6'></span>
+							<span className='bg-foreground block h-0.5 w-6'></span>
 						</div>
 					</button>
 				</div>
@@ -62,12 +62,12 @@ const Navbar = () => {
 						{data.map((item) => (
 							<li
 								key={item.id}
-								className='before:bg-primary after:bg-primary relative inline-flex cursor-pointer items-center justify-center text-lg font-semibold whitespace-nowrap transition-all ease-in-out before:absolute before:bottom-0 before:left-[50%] before:h-px before:w-0 before:origin-center before:transition-[width] before:duration-700 before:ease-in-out after:absolute after:right-[50%] after:bottom-0 after:h-px after:w-0 after:origin-center after:transition-[width] after:duration-700 after:ease-in-out hover:before:w-[50%] hover:after:w-[50%] md:text-xl dark:before:bg-gray-100 dark:after:bg-gray-100 dark:hover:text-gray-100'>
+								className='before:bg-primary after:bg-primary relative inline-flex cursor-pointer items-center justify-center text-lg font-semibold whitespace-nowrap transition-all ease-in-out before:absolute before:bottom-0 before:left-[50%] before:h-px before:w-0 before:origin-center before:transition-[width] before:duration-700 before:ease-in-out after:absolute after:right-[50%] after:bottom-0 after:h-px after:w-0 after:origin-center after:transition-[width] after:duration-700 after:ease-in-out hover:before:w-[50%] hover:after:w-[50%] md:text-xl'>
 								<a
 									className={`block px-3 py-2 transition-all duration-300 ease-in-out ${
 										active === item.value ?
-											'text-secondary-foreground border-secondary border-b-2'
-										:	'text-primary hover:text-secondary-foreground'
+											'border-primary text-foreground border-b-2'
+										:	'text-muted-foreground hover:text-foreground'
 									}`}
 									href={
 										item.value === '#contact' ?

@@ -12,7 +12,7 @@ const Footer = () => {
 	}, [])
 
 	return (
-		<footer className='place-content-center place-items-center grid py-1'>
+		<footer className='grid place-items-center py-1'>
 			<p className=''>© {new Date().getFullYear()} Amyssyko </p>
 			<span className='text-xs'>{time}</span>
 		</footer>

@@ -1,13 +1,13 @@
 import SectionContainer from '@components/section-container'
-import { Button } from './ui/button'
+import { buttonVariants } from './ui/button'
 
 const AboutMe = () => {
 	return (
 		<SectionContainer
 			id='about-me'
 			data-section='about-me'
-			className='flex flex-col gap-4 mt-20'>
-			<h2 className='flex items-center gap-x-3 mb-6 font-semibold text-lime-600 text-3xl'>
+			className='mt-20 flex flex-col gap-4'>
+			<h2 className='mb-6 flex items-center gap-x-3 text-3xl font-semibold text-lime-600'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					width='24'
@@ -25,8 +25,8 @@ const AboutMe = () => {
 				</svg>
 				Acerca de mí
 			</h2>
-			<article className='justify-items-center items-center place-content-center gap-4 md:gap-32 grid md:grid-cols-2 md:mx-1'>
-				<div className='space-y-4 order-last md:order-first [&>p]:font-medium text-gray-600 [&>p>strong]:text-lime-600 dark:text-gray-300 text-justify'>
+			<article className='grid place-content-center items-center justify-items-center gap-4 md:mx-1 md:grid-cols-2 md:gap-32'>
+				<div className='order-last space-y-4 text-justify text-gray-600 md:order-first dark:text-gray-300 [&>p]:font-medium [&>p>strong]:text-lime-600'>
 					<p>
 						<strong>
 							Ingeniero en Sistemas de Información, desarrollador de software,
@@ -60,26 +60,29 @@ const AboutMe = () => {
 					<p>
 						<strong>Intereses:</strong> Desarrollo de software, diseño web,
 						tecnologías web y movil, música, cine, 🐈‍⬛ &
-						<Button
-							asChild
-							className='inline-block mx-1 p-0 align-baseline'
-							variant='link'>
-							<a
-								referrerPolicy='no-referrer'
-								target='_blank'
-								rel='noopener noreferrer'
-								href='https://open.spotify.com/artist/06HL4z0CvFAxyc27GXpf02?si=uqY2xnd2Tim9spmYC7S6zA'>
-								Taylor Swift
-							</a>
-						</Button>
+						<a
+							referrerPolicy='no-referrer'
+							target='_blank'
+							rel='noopener noreferrer'
+							href='https://open.spotify.com/track/1rmEsOezwf2lmIZTMAO5Ag?si=80ad2fb24fb54115'
+							className={buttonVariants({
+								variant: 'link',
+								className: 'mx-1 inline-block p-0 align-baseline'
+							})}>
+							Taylor Swift
+						</a>
 						.
 					</p>
 				</div>
-				<div className='shadow-2xl shadow-cyan-500/50 h-52 aspect-square overflow-clip'>
+				<div className='aspect-square h-52 overflow-clip shadow-2xl shadow-cyan-500/50'>
 					<img
-						className='border-4 border-neutral-950 w-full sm:h-full object-contain object-top md:scale-110 skew-x-6 transition duration-500'
-						src='https://avatars.githubusercontent.com/u/69484342'
+						className='w-full skew-x-6 border-4 border-neutral-950 object-contain object-top transition duration-500 sm:h-full md:scale-110'
+						src='/avatar-amyssyko-320.jpg'
+						width={320}
+						height={320}
+						sizes='208px'
 						alt='name'
+						loading='lazy'
 					/>
 				</div>
 			</article>

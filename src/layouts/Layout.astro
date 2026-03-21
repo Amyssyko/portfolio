@@ -1,9 +1,34 @@
 ---
 type Props = {
 	title: string
+	description?: string
 }
 
-const { title } = Astro.props
+const {
+	title,
+	description = 'Portfolio profesional de desarrollo web y móvil con proyectos, experiencia y contacto.'
+} = Astro.props
+
+const siteUrl = Astro.site ?? new URL(Astro.url.origin)
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString()
+const ogImageUrl = new URL('/avatar-amyssyko-320.jpg', siteUrl).toString()
+
+const personSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'Person',
+	name: 'Amyssyko',
+	url: canonicalUrl,
+	image: ogImageUrl,
+	sameAs: ['https://github.com/Amyssyko', 'https://x.com/Amyssyko']
+}
+
+const websiteSchema = {
+	'@context': 'https://schema.org',
+	'@type': 'WebSite',
+	name: 'Portfolio de Amyssyko',
+	url: canonicalUrl,
+	description
+}
 ---
 
 <!doctype html>
@@ -13,12 +38,23 @@ const { title } = Astro.props
 		<title>{title}</title>
 		<meta
 			name='description'
-			content='Personal portfolio de desarrollador web y móvil.'
+			content={description}
+		/>
+		<meta
+			name='author'
+			content='Amyssyko'
+		/>
+		<meta
+			name='theme-color'
+			content='#111827'
+		/>
+		<meta
+			name='format-detection'
+			content='telephone=no'
 		/>
 		<link
 			rel='canonical'
-			arial-label='Canonical URL'
-			href='https://github.com/Amyssyko'
+			href={canonicalUrl}
 		/>
 		<meta
 			name='viewport'
@@ -26,27 +62,35 @@ const { title } = Astro.props
 		/>
 		<meta
 			property='og:title'
-			content='Portfolio de Amyssyko'
+			content={title}
 		/>
 		<meta
 			property='og:description'
-			content='Personal portfolio de desarrollador web y móvil.'
+			content={description}
 		/>
 		<meta
 			property='og:image'
-			content='https://avatars.githubusercontent.com/u/69484342?v=4'
+			content={ogImageUrl}
 		/>
 		<meta
 			property='og:image:alt'
-			content='Avatar de Amyssyko (cat)'
+			content='Avatar de Amyssyko'
 		/>
 		<meta
 			property='og:url'
-			content='https://github.com/Amyssyko'
+			content={canonicalUrl}
 		/>
 		<meta
 			property='og:type'
 			content='website'
+		/>
+		<meta
+			property='og:site_name'
+			content='Portfolio de Amyssyko'
+		/>
+		<meta
+			property='og:locale'
+			content='es_ES'
 		/>
 		<meta
 			name='twitter:card'
@@ -62,60 +106,65 @@ const { title } = Astro.props
 		/>
 		<meta
 			name='twitter:title'
-			content='Portfolio de Amyssyko'
+			content={title}
 		/>
 		<meta
 			name='twitter:description'
-			content='Personal portfolio de desarrollador web y móvil.'
+			content={description}
 		/>
 		<meta
 			name='twitter:image'
-			content='https://avatars.githubusercontent.com/u/69484342?v=4'
+			content={ogImageUrl}
 		/>
 
 		<meta
 			name='twitter:image:alt'
-			content='Avatar de Amyssyko (cat)'
-		/>
-		<meta
-			name='twitter:url'
-			content='https://x.com/Amyssyko'
-		/>
-		<meta
-			name='twitter:domain'
-			content='https://x.com/Amyssyko'
+			content='Avatar de Amyssyko'
 		/>
 		<meta
 			name='robots'
 			content='index,follow'
 		/>
-		<script is:inline type='application/ld+json'>
-			{
-				"@context": "https://schema.org",
-				"@type": "WebSite",
-				"headline": "Article headline",
-				"image": ["https://avatars.githubusercontent.com/u/69484342?v=4"],
-				"datePublished": "2024-06-01T08:00:00-05:00",
-				"dateModified": "2025-09-24T21:21:21-05:00",
-				"description": "Personal portfolio de desarrollador web y móvil.",
-
-				"author": [
-					{
-						"@type": "Person",
-						"name": "Amyssyko",
-						"url": "https://github.com/Amyssyko"
-					}
-				],
-				"publisher": {
-					"@type": "Organization",
-					"name": "Amyssyko",
-					"logo": {
-						"@type": "ImageObject",
-						"url": "https://avatars.githubusercontent.com/u/69484342?v=4"
-					}
+		<script is:inline>
+			const getThemePreference = () => {
+				if (
+					typeof localStorage !== 'undefined' &&
+					localStorage.getItem('theme')
+				) {
+					return localStorage.getItem('theme')
 				}
+
+				return window.matchMedia('(prefers-color-scheme: dark)').matches ?
+						'dark'
+					:	'light'
+			}
+
+			const isDark = getThemePreference() === 'dark'
+			document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
+
+			if (typeof localStorage !== 'undefined') {
+				const observer = new MutationObserver(() => {
+					const darkEnabled =
+						document.documentElement.classList.contains('dark')
+					localStorage.setItem('theme', darkEnabled ? 'dark' : 'light')
+				})
+
+				observer.observe(document.documentElement, {
+					attributes: true,
+					attributeFilter: ['class']
+				})
 			}
 		</script>
+		<script
+			is:inline
+			type='application/ld+json'
+			set:html={JSON.stringify(personSchema)}
+		/>
+		<script
+			is:inline
+			type='application/ld+json'
+			set:html={JSON.stringify(websiteSchema)}
+		/>
 
 		<link
 			rel='icon'
@@ -142,9 +191,10 @@ const { title } = Astro.props
 		/>
 	</head>
 	<body
-		class='gap-y-12 md:gap-y-36 grid grid-rows-[auto_1fr_auto] w-full min-h-dvh max-h-full overflow-x-clip'>
+		class='grid max-h-full min-h-dvh w-full grid-rows-[auto_1fr_auto] gap-y-12 overflow-x-clip md:gap-y-36'>
 		<div
-			class='z-[-2] absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))] dark:bg-[radial-gradient(ellipse_40%_80%_at_60%_-10%,rgba(120,119,198,0.3),rgba(255,255,255,0))] w-full min-h-svh'>
+			class='bg-background pointer-events-none absolute inset-0 z-[-2] min-h-svh w-full'
+			style='background-image: radial-gradient(ellipse 80% 70% at 50% -20%, oklch(var(--primary) / 0.24), transparent 60%), radial-gradient(ellipse 65% 60% at 78% -12%, oklch(var(--chart-2) / 0.18), transparent 62%), radial-gradient(ellipse 60% 55% at 15% 0%, oklch(var(--chart-3) / 0.12), transparent 58%);'>
 		</div>
 		<slot />
 	</body>

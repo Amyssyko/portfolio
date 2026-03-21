@@ -40,7 +40,7 @@ const WorkExperience = () => {
 			className='mt-20'
 			id='experience'
 			data-section='experience'>
-			<h2 className='flex items-center gap-x-3 mb-6 font-semibold text-green-600 text-3xl'>
+			<h2 className='mb-6 flex items-center gap-x-3 text-3xl font-semibold text-green-600'>
 				<svg
 					className='size-8'
 					width='24'
@@ -63,40 +63,41 @@ const WorkExperience = () => {
 				Experiencia laboral
 			</h2>
 			<ol className='overflow-x-clip'>
-				{data.map(({ company, date, description, id, more, role, url }) => {
+				{data.map(({ company, date, description, id, role, url }) => {
 					return (
 						<li key={id}>
-							<div className="before:block before:left-[-35px] before:absolute relative md:gap-10 md:space-x-4 mx-12 md:pb-12 before:border-black/20 dark:before:border-white/15 before:border-l-2 before:h-full before:content-['']">
-								<div className='items-stretch place-content-center grid md:grid-cols-2 pt-1'>
-									<div className='top-0 sticky'>
-										<span className='-top-2 -left-[42px] absolute rounded-full text-primary text-5xl'>
+							<div className="relative mx-12 before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 before:content-[''] md:gap-10 md:space-x-4 md:pb-12 dark:before:border-white/15">
+								<div className='grid place-content-center items-stretch pt-1 md:grid-cols-2'>
+									<div className='sticky top-0'>
+										<span className='text-primary absolute -top-2 -left-[42px] rounded-full text-5xl'>
 											•
 										</span>
-										<h3 className='font-bold text-yellow-500 text-xl'>
+										<h3 className='text-xl font-bold text-yellow-500'>
 											{role}
 										</h3>
-										<h4 className='font-semibold text-gray-600 dark:text-white text-xl'>
+										<h4 className='text-xl font-semibold text-gray-600 dark:text-white'>
 											{company}
 										</h4>
-										<time className='m-0 p-0 text-gray-600/80 dark:text-white/80 text-sm'>
+										<time className='m-0 p-0 text-sm text-gray-600/80 dark:text-white/80'>
 											{date}
 										</time>
 									</div>
 									<div className='relative pb-4 text-gray-600 dark:text-gray-300'>
 										<p className=''>{description}</p>
-										<div className='flex md:justify-start items-center'>
+										<div className='flex items-center md:justify-start'>
 											<a
 												referrerPolicy='no-referrer'
 												rel='noopener'
 												target='_blank'
 												href={url}
 												role='link'
-												className='font-medium text-yellow-600 hover:text-yellow-700 dark:hover:text-yellow-300 dark:text-yellow-200 text-lg'>
-												{more}
+												aria-label={`Ver más información sobre ${company}`}
+												className='text-lg font-medium text-yellow-600 hover:text-yellow-700 dark:text-yellow-200 dark:hover:text-yellow-300'>
+												{`Ver más sobre ${company}`}
 											</a>
 											<svg
 												xmlns='http://www.w3.org/2000/svg'
-												className='icon-tabler-chevron-right w-5 icon-tabler icon'
+												className='icon-tabler-chevron-right icon-tabler icon w-5'
 												width='18'
 												height='18'
 												viewBox='0 0 24 24'

@@ -1,6 +1,6 @@
 import type { Project } from '@/env'
 import { useState, type FC } from 'react'
-import { Button } from './ui/button'
+import { Button, buttonVariants } from './ui/button'
 
 const ProyectItem: FC<Project> = ({
 	id,
@@ -24,7 +24,7 @@ const ProyectItem: FC<Project> = ({
 	return (
 		<li
 			key={id}
-			className='justify-items-center place-items-center gap-8 grid grid-cols-1 md:grid-cols-2'>
+			className='grid grid-cols-1 place-items-center justify-items-center gap-8 md:grid-cols-2'>
 			<div
 				className='aspect-video overflow-hidden'
 				onMouseMove={handleMouseMove}
@@ -34,11 +34,12 @@ const ProyectItem: FC<Project> = ({
 					className={`h-full rounded-3xl border-zinc-800 object-contain duration-200 md:h-auto ${
 						isHovered ? 'scale-150 contrast-125' : 'scale-100'
 					}`}
-					width={500}
-					height={500}
+					width={image.width}
+					height={image.height}
 					loading='lazy'
 					decoding='async'
 					src={image.src}
+					sizes='(min-width: 768px) 464px, 100vw'
 					alt={title}
 					onBlur={() => setIsHovered(false)}
 					aria-label={`Imagen de ${title}`}
@@ -47,15 +48,15 @@ const ProyectItem: FC<Project> = ({
 					}}
 				/>
 			</div>
-			<div className='justify-items-center md:items-center md:place-content-center space-y-2 grid'>
-				<h3 className='font-medium text-2xl md:text-3xl text-center md:text-start'>
+			<div className='grid justify-items-center space-y-2 md:place-content-center md:items-center'>
+				<h3 className='text-center text-2xl font-medium md:text-start md:text-3xl'>
 					{title}
 				</h3>
 				<ul className='flex flex-row gap-2'>
 					{technology.map(({ id, name, icon }) => (
 						<li
 							key={id}
-							className='[&>button]:space-x-1 dark:[&>button]:bg-secondary dark:hover:[&>button]:bg-slate-600 [&>button]:text-secondary hover:dark:[&>button]:text-white dark:[&>button]:text-white hover:[&>button]:scale-105 duration-200 [&>button]:bg-accent-foreground'>
+							className='duration-200 [&>button]:space-x-1 [&>button]:bg-slate-900 [&>button]:text-white hover:[&>button]:scale-105 hover:[&>button]:bg-slate-800 dark:[&>button]:bg-slate-100 dark:[&>button]:text-slate-900 dark:hover:[&>button]:bg-slate-200'>
 							<Button
 								size='sm'
 								variant='default'>
@@ -67,27 +68,22 @@ const ProyectItem: FC<Project> = ({
 				</ul>
 
 				<p>{description}</p>
-				<div className='justify-items-center place-content-center gap-2 grid grid-cols-2'>
+				<div className='grid grid-cols-2 place-content-center justify-items-center gap-2'>
 					<ul>
 						{repository.map(({ url, icon }, index) => (
 							<li
 								key={index}
-								className='[&>button]:space-x-1 dark:[&>button]:bg-primary dark:hover:[&>button]:bg-slate-600 [&>button]:text-secondary hover:dark:[&>button]:text-white dark:[&>button]:text-white hover:[&>button]:scale-105 duration-200 [&>button]:bg-accent-foreground'>
-								<Button
-									asChild
-									size='sm'
-									variant='default'>
-									<a
-										href={url}
-										target='_blank'
-										rel='noopener noreferrer'
-										referrerPolicy='no-referrer'
-										className='inline-flex items-center gap-2'
-										aria-label='Repositorio en GitHub'>
-										<span>{icon}</span>
-										<span>Repositorio</span>
-									</a>
-								</Button>
+								className='duration-200 [&>a]:space-x-1 [&>a]:bg-slate-900 [&>a]:text-white hover:[&>a]:scale-105 hover:[&>a]:bg-slate-800 dark:[&>a]:bg-slate-100 dark:[&>a]:text-slate-900 dark:hover:[&>a]:bg-slate-200'>
+								<a
+									href={url}
+									target='_blank'
+									rel='noopener noreferrer'
+									referrerPolicy='no-referrer'
+									className={buttonVariants({ size: 'sm', variant: 'default' })}
+									aria-label='Repositorio en GitHub'>
+									<span>{icon}</span>
+									<span>Repositorio</span>
+								</a>
 							</li>
 						))}
 					</ul>
@@ -95,22 +91,17 @@ const ProyectItem: FC<Project> = ({
 						{website.map(({ url, icon }, index) => (
 							<li
 								key={index}
-								className='[&>button]:space-x-1 dark:[&>button]:bg-primary dark:hover:[&>button]:bg-slate-600 [&>button]:text-secondary hover:dark:[&>button]:text-white dark:[&>button]:text-white hover:[&>button]:scale-105 duration-200 [&>button]:bg-accent-foreground'>
-								<Button
-									asChild
-									size='sm'
-									variant='default'>
-									<a
-										href={url}
-										target='_blank'
-										rel='noopener noreferrer'
-										referrerPolicy='no-referrer'
-										className='inline-flex items-center gap-2'
-										aria-label='Sitio web del proyecto'>
-										<span>{icon}</span>
-										<span>Website</span>
-									</a>
-								</Button>
+								className='duration-200 [&>a]:space-x-1 [&>a]:bg-slate-900 [&>a]:text-white hover:[&>a]:scale-105 hover:[&>a]:bg-slate-800 dark:[&>a]:bg-slate-100 dark:[&>a]:text-slate-900 dark:hover:[&>a]:bg-slate-200'>
+								<a
+									href={url}
+									target='_blank'
+									rel='noopener noreferrer'
+									referrerPolicy='no-referrer'
+									className={buttonVariants({ size: 'sm', variant: 'default' })}
+									aria-label='Sitio web del proyecto'>
+									<span>{icon}</span>
+									<span>Website</span>
+								</a>
 							</li>
 						))}
 					</ul>
