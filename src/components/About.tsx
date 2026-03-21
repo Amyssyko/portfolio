@@ -35,7 +35,9 @@ const About = () => {
 				</a>
 			</div>
 			<div>
-				<h1 className='text-3xl font-bold'>Bienvenido, soy David</h1>
+				<h1 className='text-muted-foreground text-3xl'>
+					Bienvenido, soy David
+				</h1>
 				<p className='mt-6 text-justify sm:text-start md:text-xl [&>strong]:font-semibold [&>strong]:text-yellow-600 dark:[&>strong]:text-yellow-200'>
 					{yearsOfExperience} años de experiencia. &nbsp;
 					<strong>
