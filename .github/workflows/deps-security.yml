@@ -12,6 +12,7 @@ permissions:
   contents: read
 
 env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
   OSV_FAIL_ON_SEVERITY: HIGH
   OSV_ENFORCE: ${{ github.event_name != 'pull_request' && 'true' || 'false' }}
   AUDIT_FAIL_ON_SEVERITY: HIGH
