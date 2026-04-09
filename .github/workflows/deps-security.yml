@@ -41,7 +41,7 @@ jobs:
       - name: Setup Node.js for npm audit fallback
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
 
       - name: Generate package-lock for npm audit fallback
         run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
