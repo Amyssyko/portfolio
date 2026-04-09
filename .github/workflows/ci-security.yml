@@ -1,0 +1,46 @@
+name: CI Security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.11
+
+      - name: Verify lockfile exists
+        run: |
+          if [ ! -f bun.lockb ] && [ ! -f bun.lock ]; then
+            echo "Missing Bun lockfile (bun.lockb or bun.lock)"
+            exit 1
+          fi
+
+      - name: Install (frozen lockfile)
+        run: bun install --frozen-lockfile
+
+      - name: Validate Bun hardening config
+        run: bun run security:check-config
+
+      - name: Lint
+        run: bun run lint
+
+      - name: Build
+        run: bun run build
+
+      - name: Test
+        run: bun run test

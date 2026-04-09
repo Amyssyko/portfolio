@@ -1,0 +1,67 @@
+name: Dependencies Security
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 5 * * 1'
+
+permissions:
+  contents: read
+
+env:
+  OSV_FAIL_ON_SEVERITY: HIGH
+  OSV_ENFORCE: ${{ github.event_name != 'pull_request' && 'true' || 'false' }}
+  AUDIT_FAIL_ON_SEVERITY: HIGH
+  AUDIT_GRACE_DAYS: '14'
+  AUDIT_ENFORCE: ${{ github.event_name != 'pull_request' && 'true' || 'false' }}
+
+jobs:
+  dependency-audit-and-osv:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.11
+
+      - name: Install (frozen lockfile)
+        run: bun install --frozen-lockfile
+
+      - name: Bun audit (capture report)
+        run: bun audit > bun-audit.txt || true
+
+      - name: Setup Node.js for npm audit fallback
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Generate package-lock for npm audit fallback
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+
+      - name: NPM audit fallback (capture JSON report)
+        run: npm audit --omit=dev --json > npm-audit.json || true
+
+      - name: Enforce audit policy (phase 3)
+        run: bun run security:enforce-audit -- --bun-report bun-audit.txt --npm-report npm-audit.json --policy security/audit-grace-policy.json
+
+      - name: Generate CycloneDX SBOM
+        run: npx --yes @cyclonedx/cyclonedx-npm --output-file sbom.cdx.json --omit dev
+
+      - name: OSV scanner
+        uses: google/osv-scanner-action/osv-scanner-action@v2.2.2
+        with:
+          scan-args: |-
+            --format=json
+            --output=osv-results.json
+            --sbom=sbom.cdx.json
+
+      - name: Enforce OSV policy (phase 2)
+        run: bun run security:enforce-osv -- --input osv-results.json --exceptions security/osv-exceptions.json

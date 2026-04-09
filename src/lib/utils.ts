@@ -24,9 +24,9 @@ export const currentExperience = (): number => {
 
 export const urlGithub = 'https://github.com/Amyssyko'
 
-import ciiuImage from 'src/images/443shots_464.webp'
-import mantenimientoImage from 'src/images/537shots_464.webp'
-import searchMediaImage from 'src/images/639shots_464.webp'
-import restaurantImage from 'src/images/732shots_464.webp'
+import ciiuImage from '../assets/443shots_464.webp'
+import mantenimientoImage from '../assets/537shots_464.webp'
+import searchMediaImage from '../assets/639shots_464.webp'
+import restaurantImage from '../assets/732shots_464.webp'
 
 export { ciiuImage, mantenimientoImage, restaurantImage, searchMediaImage }

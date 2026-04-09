@@ -11,16 +11,15 @@
 		"verbatimModuleSyntax": true,
 		"jsx": "react-jsx",
 		"jsxImportSource": "react",
-		"baseUrl": ".",
 		"paths": {
-			"@/*": ["src/*"],
-			"@components/*": ["src/components/*"],
-			"@ui/*": ["src/components/ui/*"],
-			"@styles/*": ["src/styles/*"],
-			"@utils/*": ["src/utils/*"],
-			"@hooks/*": ["src/hooks/*"],
-			"@types/*": ["src/types/*"],
-			"@lib/*": ["src/lib/*"]
+			"@/*": ["./src/*"],
+			"@components/*": ["./src/components/*"],
+			"@ui/*": ["./src/components/ui/*"],
+			"@styles/*": ["./src/styles/*"],
+			"@utils/*": ["./src/utils/*"],
+			"@hooks/*": ["./src/hooks/*"],
+			"@types/*": ["./src/types/*"],
+			"@lib/*": ["./src/lib/*"]
 		}
 	}
 }

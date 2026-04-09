@@ -1,0 +1,5 @@
+{
+	"$schema": "https://json.schemastore.org/package.json",
+	"description": "Excepciones temporales para vulnerabilidades OSV/GHSA. Requieren expiración y justificación.",
+	"exceptions": []
+}

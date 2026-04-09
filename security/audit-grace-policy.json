@@ -1,0 +1,7 @@
+{
+	"description": "Política de gating para bun/npm audit con ventana de gracia por vulnerabilidad.",
+	"defaultThreshold": "HIGH",
+	"defaultGraceDays": 14,
+	"exceptions": [],
+	"graceWindow": []
+}
