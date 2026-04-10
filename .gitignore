@@ -19,6 +19,12 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env.*
+!.env.example
+
+# security/audit artifacts (generated)
+bun-audit.txt
+sbom.cdx.json
 
 # macOS-specific files
 .DS_Store

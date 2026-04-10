@@ -31,30 +31,22 @@ jobs:
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
-          bun-version: 1.3.11
+          bun-version: latest
 
       - name: Install (frozen lockfile)
         run: bun install --frozen-lockfile
 
+      - name: Check exceptions expiry
+        run: bun run security:check-exceptions-expiry
+
       - name: Bun audit (capture report)
         run: bun audit > bun-audit.txt || true
 
-      - name: Setup Node.js for npm audit fallback
-        uses: actions/setup-node@v4
-        with:
-          node-version: 'lts/*'
-
-      - name: Generate package-lock for npm audit fallback
-        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
-
-      - name: NPM audit fallback (capture JSON report)
-        run: npm audit --omit=dev --json > npm-audit.json || true
-
       - name: Enforce audit policy (phase 3)
-        run: bun run security:enforce-audit -- --bun-report bun-audit.txt --npm-report npm-audit.json --policy security/audit-grace-policy.json
+        run: bun run security:enforce-audit -- --bun-report bun-audit.txt --policy security/audit-grace-policy.json
 
       - name: Generate CycloneDX SBOM
-        run: npx --yes @cyclonedx/cyclonedx-npm --output-file sbom.cdx.json --omit dev
+        run: bunx --bun @cyclonedx/cdxgen --output sbom.cdx.json --type js .
 
       - name: OSV scanner
         uses: google/osv-scanner-action/osv-scanner-action@v2.2.2

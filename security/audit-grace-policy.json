@@ -2,6 +2,13 @@
 	"description": "Política de gating para bun/npm audit con ventana de gracia por vulnerabilidad.",
 	"defaultThreshold": "HIGH",
 	"defaultGraceDays": 14,
-	"exceptions": [],
+	"exceptions": [
+		{
+			"id": "GHSA-WRWG-2HG8-V723",
+			"package": "astro",
+			"expiresOn": "2026-05-09",
+			"reason": "Excepción temporal: HIGH remanente en Astro reportado por bun audit; se mantiene actualizado a latest y se reevalúa al siguiente release de seguridad."
+		}
+	],
 	"graceWindow": []
 }
