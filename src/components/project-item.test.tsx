@@ -8,7 +8,7 @@ describe('ProyectItem', () => {
 			<ProyectItem
 				id={1}
 				title='Proyecto Demo'
-				image={{ src: '/demo.png', width: 640, height: 360 } as any}
+				image={{ src: '/demo.png', width: 640, height: 360 } as ImageMetadata}
 				technology={[
 					{ id: 1, name: 'React', icon: <span>R</span> },
 					{ id: 2, name: 'TypeScript', icon: <span>T</span> }
