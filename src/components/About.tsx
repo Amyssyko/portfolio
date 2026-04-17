@@ -1,4 +1,4 @@
-import { currentExperience } from '@/lib/utils'
+import { avatar, currentExperience } from '@/lib/utils'
 import SectionContainer from '@components/section-container'
 import { buttonVariants } from '@ui/button'
 
@@ -14,7 +14,7 @@ const About = () => {
 					<img
 						loading='lazy'
 						decoding='async'
-						src='/avatar-amyssyko-320.jpg'
+						src={avatar.src}
 						width={320}
 						height={320}
 						sizes='160px'
@@ -38,7 +38,7 @@ const About = () => {
 				<h1 className='text-muted-foreground text-3xl'>
 					Bienvenido, soy David
 				</h1>
-				<p className='mt-6 text-justify sm:text-start md:text-xl [&>strong]:font-semibold [&>strong]:text-yellow-600 dark:[&>strong]:text-yellow-200'>
+				<p className='[&>strong]:text-primary mt-6 text-justify sm:text-start md:text-xl [&>strong]:font-semibold'>
 					{yearsOfExperience} años de experiencia. &nbsp;
 					<strong>
 						Ingeniero en Sistemas de Información, desarrollador de software,

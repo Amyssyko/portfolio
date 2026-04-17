@@ -40,7 +40,7 @@ const WorkExperience = () => {
 			className='mt-20'
 			id='experience'
 			data-section='experience'>
-			<h2 className='mb-6 flex items-center gap-x-3 text-3xl font-semibold text-green-600'>
+			<h2 className='text-primary mb-6 flex items-center gap-x-3 text-3xl font-semibold'>
 				<svg
 					className='size-8'
 					width='24'
@@ -66,23 +66,21 @@ const WorkExperience = () => {
 				{data.map(({ company, date, description, id, role, url }) => {
 					return (
 						<li key={id}>
-							<div className="relative mx-12 before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 before:content-[''] md:gap-10 md:space-x-4 md:pb-12 dark:before:border-white/15">
+							<div className="before:border-border/60 relative mx-12 before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:content-[''] md:gap-10 md:space-x-4 md:pb-12">
 								<div className='grid place-content-center items-stretch pt-1 md:grid-cols-2'>
 									<div className='sticky top-0'>
 										<span className='text-primary absolute -top-2 -left-[42px] rounded-full text-5xl'>
 											•
 										</span>
-										<h3 className='text-xl font-bold text-yellow-500'>
-											{role}
-										</h3>
-										<h4 className='text-xl font-semibold text-gray-600 dark:text-white'>
+										<h3 className='text-primary text-xl font-bold'>{role}</h3>
+										<h4 className='text-foreground text-xl font-semibold'>
 											{company}
 										</h4>
-										<time className='m-0 p-0 text-sm text-gray-600/80 dark:text-white/80'>
+										<time className='text-muted-foreground m-0 p-0 text-sm'>
 											{date}
 										</time>
 									</div>
-									<div className='relative pb-4 text-gray-600 dark:text-gray-300'>
+									<div className='text-muted-foreground relative pb-4'>
 										<p className=''>{description}</p>
 										<div className='flex items-center md:justify-start'>
 											<a
@@ -92,7 +90,7 @@ const WorkExperience = () => {
 												href={url}
 												role='link'
 												aria-label={`Ver más información sobre ${company}`}
-												className='text-lg font-medium text-yellow-600 hover:text-yellow-700 dark:text-yellow-200 dark:hover:text-yellow-300'>
+												className='text-primary hover:text-primary/85 text-lg font-medium'>
 												{`Ver más sobre ${company}`}
 											</a>
 											<svg

@@ -112,7 +112,7 @@ const Proyects = () => {
 			className='mt-20'
 			id='projects'
 			data-section='proyects'>
-			<h2 className='relative mb-6 flex items-center gap-x-3 text-3xl font-semibold text-orange-600'>
+			<h2 className='text-primary relative mb-6 flex items-center gap-x-3 text-3xl font-semibold'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					width='24'

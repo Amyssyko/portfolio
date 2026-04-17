@@ -28,5 +28,12 @@ import ciiuImage from '../assets/443shots_464.webp'
 import mantenimientoImage from '../assets/537shots_464.webp'
 import searchMediaImage from '../assets/639shots_464.webp'
 import restaurantImage from '../assets/732shots_464.webp'
+import avatar from '../assets/avatar-amyssyko-320.jpg'
 
-export { ciiuImage, mantenimientoImage, restaurantImage, searchMediaImage }
+export {
+	avatar,
+	ciiuImage,
+	mantenimientoImage,
+	restaurantImage,
+	searchMediaImage
+}

@@ -2,6 +2,26 @@
 
 Portfolio personal construido con **Astro 6**, componentes **React**, estilos con **Tailwind CSS v4** y enfoque en rendimiento/SEO.
 
+## Sobre mí
+
+Soy **David (Amyssyko)**, Ingeniero en Sistemas de Información y desarrollador de software con experiencia en **Data Science**, **Data Governance** y análisis de datos.
+
+Me enfoco en construir productos web modernos, mantenibles y orientados a resultados, combinando buenas prácticas de frontend/backend con calidad técnica (SEO, rendimiento, seguridad y DX).
+
+### Tecnologías principales
+
+- Frontend: HTML, CSS, TypeScript, React, Next.js, Astro
+- Backend: Node.js, Express
+- Data: Python, R, Power BI, SQL
+- Bases de datos: PostgreSQL, MySQL, MSSQL
+
+### Contacto
+
+- LinkedIn: <https://www.linkedin.com/in/amyssyko/>
+- GitHub: <https://github.com/Amyssyko>
+- X (Twitter): <https://x.com/Amyssyko>
+- Email: <sleep.mei.0005@gmail.com>
+
 ## Stack
 
 - Astro 6

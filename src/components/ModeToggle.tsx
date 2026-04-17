@@ -70,10 +70,9 @@ export const ThemeToggler = ({ className }: ThemeTogglerProps) => {
 			onClick={toggleTheme}
 			className={[
 				'hover:bg-secondary dark:hover:bg-primary/85 relative inline-flex size-9 cursor-pointer items-center justify-center overflow-hidden rounded-full transition-all',
-				// Borde animado con color dinámico
 				'before:absolute before:inset-0 before:scale-0 before:rounded-full before:border hover:before:scale-100',
 				'before:transition-transform before:duration-500 before:ease-in-out',
-				'before:border-primary dark:before:border-white', // ← Aquí se aplica el color blanco en modo oscuro
+				'before:border-primary dark:before:border-foreground',
 				className
 			]
 				.filter(Boolean)

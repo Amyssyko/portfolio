@@ -1,4 +1,5 @@
 ---
+import { avatar } from '@/lib/utils'
 type Props = {
 	title: string
 	description?: string
@@ -6,19 +7,22 @@ type Props = {
 
 const {
 	title,
-	description = 'Portfolio profesional de desarrollo web y móvil con proyectos, experiencia y contacto.'
+	description = 'Portfolio de Amyssyko, desarrollador software y data scientist. Explora mis proyectos, experiencia laboral y habilidades técnicas.'
 } = Astro.props
 
 const siteUrl = Astro.site ?? new URL(Astro.url.origin)
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString()
-const ogImageUrl = new URL('/avatar-amyssyko-320.jpg', siteUrl).toString()
+const isLocalSite =
+	siteUrl.hostname === 'localhost' || siteUrl.hostname === '127.0.0.1'
+const twitterUrl = isLocalSite ? 'https://x.com/Amyssyko' : canonicalUrl
+const twitterDomain = isLocalSite ? 'x.com' : siteUrl.hostname
 
 const personSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'Person',
 	name: 'Amyssyko',
 	url: canonicalUrl,
-	image: ogImageUrl,
+	image: avatar.src,
 	sameAs: ['https://github.com/Amyssyko', 'https://x.com/Amyssyko']
 }
 
@@ -70,11 +74,39 @@ const websiteSchema = {
 		/>
 		<meta
 			property='og:image'
-			content={ogImageUrl}
+			content={avatar.src}
+		/>
+		<meta
+			property='og:image:url'
+			content={avatar.src}
+		/>
+		<meta
+			property='og:image:secure_url'
+			content={avatar.src}
+		/>
+		<meta
+			property='og:image:type'
+			content='image/jpeg'
+		/>
+		<meta
+			property='og:image:width'
+			content='320'
+		/>
+		<meta
+			property='og:image:height'
+			content='320'
 		/>
 		<meta
 			property='og:image:alt'
 			content='Avatar de Amyssyko'
+		/>
+		<meta
+			name='image'
+			content={avatar.src}
+		/>
+		<meta
+			itemprop='image'
+			content={avatar.src}
 		/>
 		<meta
 			property='og:url'
@@ -90,7 +122,7 @@ const websiteSchema = {
 		/>
 		<meta
 			property='og:locale'
-			content='es_ES'
+			content='es'
 		/>
 		<meta
 			name='twitter:card'
@@ -113,8 +145,20 @@ const websiteSchema = {
 			content={description}
 		/>
 		<meta
+			name='twitter:url'
+			content={twitterUrl}
+		/>
+		<meta
+			name='twitter:domain'
+			content={twitterDomain}
+		/>
+		<meta
 			name='twitter:image'
-			content={ogImageUrl}
+			content={avatar.src}
+		/>
+		<meta
+			name='twitter:image:src'
+			content={avatar.src}
 		/>
 
 		<meta

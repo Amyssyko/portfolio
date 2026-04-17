@@ -1,3 +1,4 @@
+import { avatar } from '@/lib/utils'
 import SectionContainer from '@components/section-container'
 import { buttonVariants } from './ui/button'
 
@@ -7,7 +8,7 @@ const AboutMe = () => {
 			id='about-me'
 			data-section='about-me'
 			className='mt-20 flex flex-col gap-4'>
-			<h2 className='mb-6 flex items-center gap-x-3 text-3xl font-semibold text-lime-600'>
+			<h2 className='text-primary mb-6 flex items-center gap-x-3 text-3xl font-semibold'>
 				<svg
 					xmlns='http://www.w3.org/2000/svg'
 					width='24'
@@ -26,7 +27,7 @@ const AboutMe = () => {
 				Acerca de mí
 			</h2>
 			<article className='grid place-content-center items-center justify-items-center gap-4 md:mx-1 md:grid-cols-2 md:gap-32'>
-				<div className='order-last space-y-4 text-justify text-gray-600 md:order-first dark:text-gray-300 [&>p]:font-medium [&>p>strong]:text-lime-600'>
+				<div className='text-muted-foreground [&>p>strong]:text-primary order-last space-y-4 text-justify md:order-first [&>p]:font-medium'>
 					<p>
 						<strong>
 							Ingeniero en Sistemas de Información, desarrollador de software,
@@ -74,10 +75,10 @@ const AboutMe = () => {
 						.
 					</p>
 				</div>
-				<div className='aspect-square h-52 overflow-clip shadow-2xl shadow-cyan-500/50'>
+				<div className='shadow-primary/35 aspect-square h-52 overflow-clip shadow-2xl'>
 					<img
-						className='w-full skew-x-6 border-4 border-neutral-950 object-contain object-top transition duration-500 sm:h-full md:scale-110'
-						src='/avatar-amyssyko-320.jpg'
+						className='border-border w-full skew-x-6 border-4 object-contain object-top transition duration-500 sm:h-full md:scale-110'
+						src={avatar.src}
 						width={320}
 						height={320}
 						sizes='208px'

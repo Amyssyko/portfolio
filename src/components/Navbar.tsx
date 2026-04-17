@@ -71,7 +71,7 @@ const Navbar = () => {
 									}`}
 									href={
 										item.value === '#contact' ?
-											'mailto:cristian-0005@live.com'
+											'mailto:sleep.mei.0005@gmail.com'
 										:	item.value
 									}
 									rel={

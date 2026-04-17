@@ -16,7 +16,7 @@ describe('Navbar', () => {
 	it('incluye enlace mailto para contacto y botón de tema', () => {
 		const html = renderToStaticMarkup(<Navbar />)
 
-		expect(html).toContain('mailto:cristian-0005@live.com')
+		expect(html).toContain('mailto:sleep.mei.0005@gmail.com')
 		expect(html).toContain('Toggle theme')
 	})
 })

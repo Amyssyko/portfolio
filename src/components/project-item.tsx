@@ -31,7 +31,7 @@ const ProyectItem: FC<Project> = ({
 				onMouseEnter={() => setIsHovered(true)}
 				onMouseLeave={() => setIsHovered(false)}>
 				<img
-					className={`h-full rounded-3xl border-zinc-800 object-contain duration-200 md:h-auto ${
+					className={`border-border h-full rounded-3xl border object-contain duration-200 md:h-auto ${
 						isHovered ? 'scale-150 contrast-125' : 'scale-100'
 					}`}
 					width={image.width}
@@ -56,7 +56,7 @@ const ProyectItem: FC<Project> = ({
 					{technology.map(({ id, name, icon }) => (
 						<li
 							key={id}
-							className='duration-200 [&>button]:space-x-1 [&>button]:bg-slate-900 [&>button]:text-white hover:[&>button]:scale-105 hover:[&>button]:bg-slate-800 dark:[&>button]:bg-slate-100 dark:[&>button]:text-slate-900 dark:hover:[&>button]:bg-slate-200'>
+							className='duration-200 [&>button]:space-x-1 hover:[&>button]:scale-105'>
 							<Button
 								size='sm'
 								variant='default'>
@@ -73,7 +73,7 @@ const ProyectItem: FC<Project> = ({
 						{repository.map(({ url, icon }, index) => (
 							<li
 								key={index}
-								className='duration-200 [&>a]:space-x-1 [&>a]:bg-slate-900 [&>a]:text-white hover:[&>a]:scale-105 hover:[&>a]:bg-slate-800 dark:[&>a]:bg-slate-100 dark:[&>a]:text-slate-900 dark:hover:[&>a]:bg-slate-200'>
+								className='duration-200 [&>a]:space-x-1 hover:[&>a]:scale-105'>
 								<a
 									href={url}
 									target='_blank'
@@ -91,7 +91,7 @@ const ProyectItem: FC<Project> = ({
 						{website.map(({ url, icon }, index) => (
 							<li
 								key={index}
-								className='duration-200 [&>a]:space-x-1 [&>a]:bg-slate-900 [&>a]:text-white hover:[&>a]:scale-105 hover:[&>a]:bg-slate-800 dark:[&>a]:bg-slate-100 dark:[&>a]:text-slate-900 dark:hover:[&>a]:bg-slate-200'>
+								className='duration-200 [&>a]:space-x-1 hover:[&>a]:scale-105'>
 								<a
 									href={url}
 									target='_blank'
