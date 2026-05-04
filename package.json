@@ -19,7 +19,7 @@
 		"security:enforce-audit": "bun run scripts/security/enforce-audit-policy.mjs"
 	},
 	"dependencies": {
-		"@astrojs/check": "0.9.8",
+		"@astrojs/check": "0.9.9",
 		"@astrojs/react": "5.0.3",
 		"@astrojs/sitemap": "3.7.2",
 		"@astrojs/tailwind": "6.0.2",
