@@ -6,8 +6,8 @@
 		{
 			"id": "GHSA-WRWG-2HG8-V723",
 			"package": "astro",
-			"expiresOn": "2026-05-09",
-			"reason": "Excepción temporal: HIGH remanente en Astro reportado por bun audit; se mantiene actualizado a latest y se reevalúa al siguiente release de seguridad."
+			"expiresOn": "2026-08-06",
+			"reason": "Falso positivo de bun audit: GHSA-WRWG-2HG8-V723 afecta astro <=5.15.6 (rama 5.x). El proyecto usa astro 6.x donde el advisory no aplica (confirmado por npm advisory API). Se mantiene la excepción como guardia hasta confirmar corrección upstream en el advisory database."
 		}
 	],
 	"graceWindow": []
