@@ -35,6 +35,11 @@ const createRouteContext = (site?: URL): RobotsRouteContext => {
 	const url = new URL(request.url)
 
 	return {
+		logger: {
+			info: () => {},
+			warn: () => {},
+			error: () => {}
+		},
 		site,
 		generator: 'Astro vtest',
 		clientAddress: '127.0.0.1',

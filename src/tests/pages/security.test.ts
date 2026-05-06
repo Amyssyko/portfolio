@@ -39,6 +39,11 @@ const createRouteContext = (site?: URL): SecurityRouteContext => {
 	const url = new URL(request.url)
 
 	const context: SecurityRouteContext = {
+		logger: {
+			info: () => {},
+			warn: () => {},
+			error: () => {}
+		},
 		site,
 		generator: 'Astro vtest',
 		clientAddress: '127.0.0.1',
