@@ -14,6 +14,7 @@
 		"jsxImportSource": "react",
 		"paths": {
 			"@/*": ["./src/*"],
+			"@layouts/*": ["./src/layouts/*"],
 			"@components/*": ["./src/components/*"],
 			"@ui/*": ["./src/components/ui/*"],
 			"@styles/*": ["./src/styles/*"],

@@ -1,6 +1,6 @@
 import type { Project } from '@/env'
+import { Button, buttonVariants } from '@ui/button'
 import { useState, type FC } from 'react'
-import { Button, buttonVariants } from './ui/button'
 
 const ProyectItem: FC<Project> = ({
 	id,

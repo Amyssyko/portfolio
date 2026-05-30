@@ -4,11 +4,11 @@ import SectionContainer from '@components/section-container'
 const data: Experience[] = [
 	{
 		id: 0,
-		role: 'Data Management Engineer & Data Governance',
+		role: 'Gestión de datos y gobernanza de datos',
 		company: 'Cacpe de Pastaza',
 		date: '2024 - Actualidad',
 		description:
-			'Implementación de sistema de gestión de datos y gobernanza, utilizando tecnologías como Python, SQL, Power BI, etc.',
+			'Responsable de la gestión de datos y la gobernanza de datos en la empresa, asegurando la calidad, integridad y seguridad de los datos, así como el cumplimiento de las políticas y regulaciones relacionadas con los datos.',
 		more: 'Mas información',
 		url: 'https://www.cacpepas.fin.ec/'
 	},
@@ -69,7 +69,7 @@ const WorkExperience = () => {
 							<div className="before:border-border/60 relative mx-12 before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:content-[''] md:gap-10 md:space-x-4 md:pb-12">
 								<div className='grid place-content-center items-stretch pt-1 md:grid-cols-2'>
 									<div className='sticky top-0'>
-										<span className='text-primary absolute -top-2 -left-[42px] rounded-full text-5xl'>
+										<span className='text-primary absolute -top-2 left-[-42px] rounded-full text-5xl'>
 											•
 										</span>
 										<h3 className='text-primary text-xl font-bold'>{role}</h3>

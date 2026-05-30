@@ -1,6 +1,6 @@
 import { avatar } from '@/lib/utils'
 import SectionContainer from '@components/section-container'
-import { buttonVariants } from './ui/button'
+import { buttonVariants } from '@ui/button'
 
 const AboutMe = () => {
 	return (
@@ -68,11 +68,10 @@ const AboutMe = () => {
 							href='https://open.spotify.com/track/1rmEsOezwf2lmIZTMAO5Ag?si=80ad2fb24fb54115'
 							className={buttonVariants({
 								variant: 'link',
-								className: 'mx-1 inline-block p-0 align-baseline'
+								className: '-mx-1 inline-block align-baseline'
 							})}>
-							Taylor Swift
+							Taylor Swift.
 						</a>
-						.
 					</p>
 				</div>
 				<div className='shadow-primary/35 aspect-square h-52 overflow-clip shadow-2xl'>

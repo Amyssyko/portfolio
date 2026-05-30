@@ -1,5 +1,5 @@
+import { ThemeToggler } from '@components/ModeToggle'
 import { useEffect, useState } from 'react'
-import { ThemeToggler } from './ModeToggle'
 
 const data = [
 	{ id: 1, title: 'Experiencia laboral', value: '#experience' },
@@ -87,7 +87,7 @@ const Navbar = () => {
 							</li>
 						))}
 					</ul>
-					<ThemeToggler />
+					<ThemeToggler className='mx-auto w-full' />
 				</div>
 			</nav>
 		</header>
