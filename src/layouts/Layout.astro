@@ -199,16 +199,12 @@ const websiteSchema = {
 				})
 			}
 		</script>
-		<script
-			is:inline
-			type='application/ld+json'
-			set:html={JSON.stringify(personSchema)}
-		/>
-		<script
-			is:inline
-			type='application/ld+json'
-			set:html={JSON.stringify(websiteSchema)}
-		/>
+		<script is:inline type='application/ld+json'>
+			{JSON.stringify(personSchema)}
+		</script>
+		<script is:inline type='application/ld+json'>
+			{JSON.stringify(websiteSchema)}
+		</script>
 
 		<link
 			rel='icon'
@@ -235,9 +231,9 @@ const websiteSchema = {
 		/>
 	</head>
 	<body
-		class='grid max-h-full min-h-dvh w-full grid-rows-[auto_1fr_auto] gap-y-12 overflow-x-clip md:gap-y-36'>
+		class='gap-y-12 md:gap-y-36 grid grid-rows-[auto_1fr_auto] w-full min-h-dvh max-h-full overflow-x-clip'>
 		<div
-			class='bg-background pointer-events-none absolute inset-0 z-[-2] min-h-svh w-full'
+			class='z-[-2] absolute inset-0 bg-background w-full min-h-svh pointer-events-none'
 			style='background-image: radial-gradient(ellipse 80% 70% at 50% -20%, oklch(var(--primary) / 0.24), transparent 60%), radial-gradient(ellipse 65% 60% at 78% -12%, oklch(var(--chart-2) / 0.18), transparent 62%), radial-gradient(ellipse 60% 55% at 15% 0%, oklch(var(--chart-3) / 0.12), transparent 58%);'>
 		</div>
 		<slot />
