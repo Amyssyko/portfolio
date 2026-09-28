@@ -43,7 +43,7 @@
 		"bun-types": "1.4.2",
 		"eslint-plugin-react-hooks": "7.1.1",
 		"prettier": "3.9.7",
-		"prettier-plugin-astro": "1.0.1",
+		"prettier-plugin-astro": "1.1.0",
 		"prettier-plugin-tailwindcss": "0.8.1"
 	},
 	"packageManager": "bun@1.4.2",
