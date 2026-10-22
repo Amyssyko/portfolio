@@ -7,38 +7,46 @@ type Props = {
 
 const {
 	title,
-	description = 'Portfolio de Amyssyko, desarrollador software y data scientist. Explora mis proyectos, experiencia laboral y habilidades técnicas.'
+	description = 'Portfolio de Amyssyko, desarrollador de software y data scientist. Explora mis proyectos, experiencia laboral y habilidades técnicas.'
 } = Astro.props
 
 const siteUrl = Astro.site ?? new URL(Astro.url.origin)
-const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString()
-const isLocalSite =
-	siteUrl.hostname === 'localhost' || siteUrl.hostname === '127.0.0.1'
-const twitterUrl = isLocalSite ? 'https://x.com/Amyssyko' : canonicalUrl
-const twitterDomain = isLocalSite ? 'x.com' : siteUrl.hostname
+const siteRootUrl = new URL('/', siteUrl).href
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href
+const avatarUrl = new URL(avatar.src, siteUrl).href
 
 const personSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'Person',
+	'@id': `${siteRootUrl}#person`,
 	name: 'Amyssyko',
-	url: canonicalUrl,
-	image: avatar.src,
+	url: siteRootUrl,
+	image: avatarUrl,
+	description: 'Desarrollador de software y data scientist.',
 	sameAs: ['https://github.com/Amyssyko', 'https://x.com/Amyssyko']
 }
 
 const websiteSchema = {
 	'@context': 'https://schema.org',
 	'@type': 'WebSite',
+	'@id': `${siteRootUrl}#website`,
 	name: 'Portfolio de Amyssyko',
-	url: canonicalUrl,
-	description
+	url: siteRootUrl,
+	inLanguage: 'es',
+	author: {
+		'@id': `${siteRootUrl}#person`
+	}
 }
 ---
 
-<!doctype html>
 <html lang='es'>
 	<head>
 		<meta charset='UTF-8' />
+		<meta
+			name='viewport'
+			content='width=device-width, initial-scale=1'
+		/>
+
 		<title>{title}</title>
 		<meta
 			name='description'
@@ -52,17 +60,28 @@ const websiteSchema = {
 			name='theme-color'
 			content='#111827'
 		/>
-		<meta
-			name='format-detection'
-			content='telephone=no'
-		/>
+
 		<link
 			rel='canonical'
 			href={canonicalUrl}
 		/>
+
+		<!-- Open Graph -->
 		<meta
-			name='viewport'
-			content='width=device-width, viewport-fit=cover'
+			property='og:type'
+			content='website'
+		/>
+		<meta
+			property='og:site_name'
+			content='Portfolio de Amyssyko'
+		/>
+		<meta
+			property='og:locale'
+			content='es_ES'
+		/>
+		<meta
+			property='og:url'
+			content={canonicalUrl}
 		/>
 		<meta
 			property='og:title'
@@ -74,56 +93,14 @@ const websiteSchema = {
 		/>
 		<meta
 			property='og:image'
-			content={avatar.src}
-		/>
-		<meta
-			property='og:image:url'
-			content={avatar.src}
-		/>
-		<meta
-			property='og:image:secure_url'
-			content={avatar.src}
-		/>
-		<meta
-			property='og:image:type'
-			content='image/jpeg'
-		/>
-		<meta
-			property='og:image:width'
-			content='320'
-		/>
-		<meta
-			property='og:image:height'
-			content='320'
+			content={avatarUrl}
 		/>
 		<meta
 			property='og:image:alt'
 			content='Avatar de Amyssyko'
 		/>
-		<meta
-			name='image'
-			content={avatar.src}
-		/>
-		<meta
-			itemprop='image'
-			content={avatar.src}
-		/>
-		<meta
-			property='og:url'
-			content={canonicalUrl}
-		/>
-		<meta
-			property='og:type'
-			content='website'
-		/>
-		<meta
-			property='og:site_name'
-			content='Portfolio de Amyssyko'
-		/>
-		<meta
-			property='og:locale'
-			content='es'
-		/>
+
+		<!-- Twitter / X -->
 		<meta
 			name='twitter:card'
 			content='summary_large_image'
@@ -137,6 +114,10 @@ const websiteSchema = {
 			content='@Amyssyko'
 		/>
 		<meta
+			name='twitter:url'
+			content={canonicalUrl}
+		/>
+		<meta
 			name='twitter:title'
 			content={title}
 		/>
@@ -145,22 +126,9 @@ const websiteSchema = {
 			content={description}
 		/>
 		<meta
-			name='twitter:url'
-			content={twitterUrl}
-		/>
-		<meta
-			name='twitter:domain'
-			content={twitterDomain}
-		/>
-		<meta
 			name='twitter:image'
-			content={avatar.src}
+			content={avatarUrl}
 		/>
-		<meta
-			name='twitter:image:src'
-			content={avatar.src}
-		/>
-
 		<meta
 			name='twitter:image:alt'
 			content='Avatar de Amyssyko'
@@ -199,13 +167,16 @@ const websiteSchema = {
 				})
 			}
 		</script>
-		<script is:inline type='application/ld+json'>
-			{JSON.stringify(personSchema)}
-		</script>
-		<script is:inline type='application/ld+json'>
-			{JSON.stringify(websiteSchema)}
-		</script>
-
+		<script
+			is:inline
+			type='application/ld+json'
+			set:html={JSON.stringify(personSchema)}
+		/>
+		<script
+			is:inline
+			type='application/ld+json'
+			set:html={JSON.stringify(websiteSchema)}
+		/>
 		<link
 			rel='icon'
 			href='/favicon.svg'
@@ -221,21 +192,18 @@ const websiteSchema = {
 		<!-- Fallback favicon (for browsers that don't support prefers-color-scheme or when no preference is set) -->
 		<link
 			rel='icon'
-			type='image/svg+xml'
 			href='/favicon.svg'
+			type='image/svg+xml'
 		/>
-
 		<meta
 			name='generator'
 			content={Astro.generator}
 		/>
 	</head>
-	<body
-		class='gap-y-12 md:gap-y-36 grid grid-rows-[auto_1fr_auto] w-full min-h-dvh max-h-full overflow-x-clip'>
+	<body class='gap-y-12 md:gap-y-36 grid grid-rows-[auto_1fr_auto] w-full min-h-dvh max-h-full overflow-x-clip'>
 		<div
 			class='z-[-2] absolute inset-0 bg-background w-full min-h-svh pointer-events-none'
-			style='background-image: radial-gradient(ellipse 80% 70% at 50% -20%, oklch(var(--primary) / 0.24), transparent 60%), radial-gradient(ellipse 65% 60% at 78% -12%, oklch(var(--chart-2) / 0.18), transparent 62%), radial-gradient(ellipse 60% 55% at 15% 0%, oklch(var(--chart-3) / 0.12), transparent 58%);'>
-		</div>
+			style='background-image: radial-gradient(ellipse 80% 70% at 50% -20%, oklch(var(--primary) / 0.24), transparent 60%), radial-gradient(ellipse 65% 60% at 78% -12%, oklch(var(--chart-2) / 0.18), transparent 62%), radial-gradient(ellipse 60% 55% at 15% 0%, oklch(var(--chart-3) / 0.12), transparent 58%);'></div>
 		<slot />
 	</body>
 </html>

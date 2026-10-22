@@ -4,7 +4,7 @@
 	"exclude": ["dist"],
 	"target": "ESNext",
 	"compilerOptions": {
-		"types": ["bun-types","node"],
+		"types": ["bun-types", "node"],
 		"plugins": [
 			{
 				"name": "@astrojs/ts-plugin"

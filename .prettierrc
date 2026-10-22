@@ -19,5 +19,13 @@
 	"tabWidth": 2,
 	"useTabs": true,
 	"embeddedLanguageFormatting": "auto",
-	"withNodeModules": true
+	"withNodeModules": true,
+	"overrides": [
+		{
+			"files": "*.astro",
+			"options": {
+				"parser": "astro"
+			}
+		}
+	]
 }
