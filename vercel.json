@@ -6,15 +6,11 @@
 			"headers": [
 				{
 					"key": "Content-Security-Policy",
-					"value": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-src 'none'; child-src 'none'; media-src 'self'; upgrade-insecure-requests"
-				},
-				{
-					"key": "Content-Security-Policy-Report-Only",
-					"value": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-src 'none'; media-src 'self'; upgrade-insecure-requests"
+					"value": "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; manifest-src 'self'; frame-src 'none'; child-src 'none'; media-src 'self'; upgrade-insecure-requests"
 				},
 				{
 					"key": "Strict-Transport-Security",
-					"value": "max-age=63072000; includeSubDomains; preload"
+					"value": "max-age=63072000; includeSubDomains"
 				},
 				{
 					"key": "X-Content-Type-Options",
@@ -30,23 +26,40 @@
 				},
 				{
 					"key": "Permissions-Policy",
-					"value": "camera=(), microphone=(), geolocation=()"
+					"value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), serial=(), bluetooth=(), browsing-topics=()"
 				},
 				{
 					"key": "Cross-Origin-Opener-Policy",
 					"value": "same-origin"
 				},
 				{
-					"key": "X-DNS-Prefetch-Control",
-					"value": "off"
+					"key": "Cross-Origin-Resource-Policy",
+					"value": "same-origin"
+				},
+				{
+					"key": "Cross-Origin-Embedder-Policy",
+					"value": "credentialless"
 				},
 				{
 					"key": "X-Permitted-Cross-Domain-Policies",
 					"value": "none"
 				},
 				{
+					"key": "X-DNS-Prefetch-Control",
+					"value": "off"
+				},
+				{
 					"key": "Origin-Agent-Cluster",
 					"value": "?1"
+				}
+			]
+		},
+		{
+			"source": "/_astro/(.*)",
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "public, max-age=31536000, immutable"
 				}
 			]
 		}

@@ -2,6 +2,9 @@
 	"name": "portfolio",
 	"type": "module",
 	"version": "0.0.5",
+	"engine": {
+		"bun": ">=1.4.3"
+	},
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
